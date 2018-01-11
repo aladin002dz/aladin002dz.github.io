@@ -54,7 +54,7 @@ footer {
   line-height: 20px;
 }
 
-.navbar-collapse ul li a:hover {
+.navbar-collapse ul li a:hover, a.active {
   color: #E85D00;
   text-decoration: none;
   /*padding-bottom: 15px;*/
@@ -140,7 +140,7 @@ p{
 
 h2{
   display: inline-block;
-  border-bottom: #E85D00 2px solid;
+  border-bottom: #2E8AFF 2px solid;
 }
 
 .welcome img{

@@ -1,90 +1,83 @@
+function testAnim() {
+    $('#scroll-down-cue').removeClass().addClass('bounce animated')
+    .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $(this).removeClass();
+    });
+  };
+
+    //Activate current section ----------------------------------------------------------------------------------------------------------  
+    /*
+    $(document).scroll(function(){
+        var st = $(this).scrollTop();
+
+        $('section').each(function() {
+            if(st > $(this).offset().top && st <= $(this).offset().top-70 + $(this).height() ){                    
+                var id = $(this).attr('id');
+                $('a[href="#'+id+'"]').addClass('active');
+            }else{
+                var id = $(this).attr('id');
+                $('a[href="#'+id+'"]').removeClass('active');   
+            }   
+        });
+
+    });
+*/
 $(document).ready(function() {
     
-    
-    /* For the sticky navigation */
-	/*
-    $('.js--section-features').waypoint(function(direction) {
-        if (direction == "down") {
-            $('nav').addClass('sticky');
-        } else {
-            $('nav').removeClass('sticky');
-        }
-    }, {
-      offset: '60px;'
+    //Activate current section ----------------------------------------------------------------------------------------------------------  
+    $(window).scroll(function() {
+
+        var position = $(this).scrollTop();
+
+        var sections = $('section'),
+            nav = $('navbar'),
+            nav_height = nav.outerHeight();
+
+        sections.each(function() {
+            var top = $(this).offset().top - nav_height-90,
+                bottom = top + $(this).outerHeight()-90;
+
+            if (position + $(window).height() == $(document).height()) { // if user scrolls to bottom
+                $('.active').removeClass('active');
+                $('.projectsLink').addClass('active');
+            } else if (position >= top && position <= bottom) { // else, if user is in any other section
+                $('.active').removeClass('active');
+                var id = $(this).attr('id');
+                $('a[href="#'+id+'"].link').addClass('active');
+            }
+        });
     });
-    */
-    
-    /* Scroll on buttons */
-    $('.js--scroll-to-plans').click(function () {
-       $('html, body').animate({scrollTop: $('.js--section-plans').offset().top}, 1000); 
-    });
-    
-    $('.js--scroll-to-start').click(function () {
-       $('html, body').animate({scrollTop: $('.js--section-features').offset().top}, 1000); 
-    });
-    
-    
-    /* Navigation scroll */
-    $(function() {
-      $('a[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html,body').animate({
-              scrollTop: target.offset().top
-            }, 1000);
-            return false;
-          }
-        }
+
+    // Copyright Year -----------------------------------------------------------------------------------------------------
+      document.getElementById('copyright').innerHTML = '&copy; ' + new Date().getFullYear() +' Mahfoudh (Aladin) Arous';
+
+      // Icons hover effect -------------------------------------------------------------------------------------------------
+      var img = document.getElementById("fiverr-icon");
+      img.onmouseout = function () {
+          this.src = "img/fiverr-transparent-gray.png";
+        };
+      img.onmouseover = function () {
+          this.src = "img/fiverr-transparent.png";
+        };
+
+      img = document.getElementById("freelancer-icon");
+      img.onmouseout = function () {
+          this.src = "img/freelancer-gray.png";
+        };
+      img.onmouseover = function () {
+          this.src = "img/freelancer.png";
+        };
+
+    // Infinite bounce --------------------------------------------------------------------------------------------------------------
+    setInterval(function(){ testAnim();}, 500);
+
+    // Smooth scrolling -------------------------------------------------------------------------------------------------------------
+    $('a[href*=#]').on('click', function(event){
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top-40}, 500);
       });
-    });
-    
-    
-    /* Animations on scroll */
-    $('.js--wp-1').waypoint(function(direction) {
-        $('.js--wp-1').addClass('animated fadeIn');
-    }, {
-        offset: '50%'
-    });
-    
-    $('.js--wp-2').waypoint(function(direction) {
-        $('.js--wp-2').addClass('animated fadeInUp');
-    }, {
-        offset: '50%'
-    });
-    
-    $('.js--wp-3').waypoint(function(direction) {
-        $('.js--wp-3').addClass('animated fadeIn');
-    }, {
-        offset: '50%'
-    });
-    
-    $('.js--wp-4').waypoint(function(direction) {
-        $('.js--wp-4').addClass('animated pulse');
-    }, {
-        offset: '50%'
-    });
-    
-    
-    /* Mobile navigation */
-    $('.js--nav-icon').click(function() {
-        var nav = $('.js--main-nav');
-        var icon = $('.js--nav-icon i');
-        
-        nav.slideToggle(200);
-        
-        if (icon.hasClass('ion-navicon-round')) {
-            icon.addClass('ion-close-round');
-            icon.removeClass('ion-navicon-round');
-        } else {
-            icon.addClass('ion-navicon-round');
-            icon.removeClass('ion-close-round');
-        }        
-    });
 
-
-    /* Maps */
+    // Maps -------------------------------------------------------------------------------------------------------------------------
     var map = new GMaps({
         div: '.map',
         lat: 36.165902,

@@ -31,9 +31,9 @@
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="topFixedNavbar1">
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#welcome">About</a></li>
-                  <li><a href="#skills">Skills</a></li>
-                  <li><a href="#projects">Projects</a></li>
+                  <li><a href="#welcome" class=" link aboutLink active">About</a></li>
+                  <li><a href="#skills" class=" link skillsLink">Skills</a></li>
+                  <li><a href="#projects" class="link projectsLink">Projects</a></li>
                 </ul>
               </div>
             </div>
@@ -61,7 +61,7 @@
       <div class="row">
           <div id="scroll-down-cue">
               <a href="#skills">
-                <i class="fa fa-angle-double-down animated bounce"></i>
+                <i class="fa fa-angle-double-down"></i>
               </a>
           </div>
       </div>
@@ -177,8 +177,11 @@
       </div>
 	</footer>
     <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
     <script type="text/javascript">
+    /*
       // Smooth scrolling --------------------------------------------------------------------------------------------------
       $('a[href*=#]').on('click', function(event){
         $('html,body').animate({scrollTop:$(this.hash).offset().top-80}, 1000);
@@ -215,7 +218,7 @@
       $(document).ready(function(){
         setInterval(function(){ testAnim();}, 500);
 
-      });
+      });*/
       </script>
     </body>
 </html>
