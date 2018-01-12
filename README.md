@@ -1,1 +1,6 @@
-"# aladin002dz.github.io" 
+aladin002dz.github.io
+=====================
+
+https://aladindev.com/
+
+https://aladin002dz.github.io/
