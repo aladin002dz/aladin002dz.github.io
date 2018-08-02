@@ -225,8 +225,9 @@ footer p {
   display: block;
   text-align: center;
   width: 100%;
-	font-size: 50%;
-	color: #aaa;
+  font-size: 50%;
+  color: #aaa;
+  height: 100px;
 }
 
 .icon{
