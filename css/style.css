@@ -226,8 +226,10 @@ h2{
 }
 #projects .projectListing {
   padding: 24px 0;
+  margin: 10px 0;
   clear: both;
 }
+
 
 /*---------------------------------------*/
 /* Social Links--------------------------*/
