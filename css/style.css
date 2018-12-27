@@ -168,16 +168,15 @@ h2{
 
 #scroll-down-cue {
   color: #2E8AFF;
-  height: 80px;
   display: block;
   width: 100%;
   text-align: center;
 }
 
-.fa-angle-double-down {
+.fa-angle-down {
   color: #2E8AFF;
   font-style: bold;
-  font-size: 70px;
+  font-size: 2rem;
   text-shadow: 1px 1px 1px #000;
 }
 
@@ -192,7 +191,7 @@ h2{
 }
 
 .icon-big {
-  font-size: 350%;
+  font-size: 300%;
   display: block;
   text-align: center;
   /*color: #E85D00;*/
@@ -253,8 +252,8 @@ footer p {
 .icon{
   margin: 0;
   vertical-align: text-bottom;
-  width: 50px;
-  height: 50px;
+  width: 2rem;
+  height: 2rem;
 }
 
 .social-links a,
@@ -267,18 +266,19 @@ footer p {
   transition: color 0.2s;
 }
 
-footer .fa {
+footer .fab, footer .far {
+  margin: 0.2rem 0.1rem;
   color: #888;
   -webkit-transition: color 0.2s;
   transition: color 0.2s;
-  font-size: 50px;
+  font-size: 2rem;
 }
 
 .fa-facebook-square:hover {
   color: #3b5998;
 }
 
-.fa-linkedin-square:hover {
+.fa-linkedin:hover {
   color: #007BB5;
 }
 
@@ -286,7 +286,11 @@ footer .fa {
   color: #111;
 }
 
-.fa-envelope-o:hover {
+.fa-behance-square:hover {
+  color: #006BFF;
+}
+
+.fa-envelope:hover {
   color: #0489c9;
 }
 
