@@ -1,5 +1,4 @@
+# My Personal Website Code
 
-Mahfoudh Arous personal and professional website, please check it on the following links:
-
-# https://aladindev.com
-# https://aladin002dz.github.io
+Welcome to my personal website code.  
+visit it [here](https://aladindev.com)
