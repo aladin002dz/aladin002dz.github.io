@@ -173,12 +173,12 @@ h2{
   text-align: center;
 }
 
-.fa-angle-down {
-  color: #2E8AFF;
-  font-style: bold;
-  font-size: 2rem;
-  text-shadow: 1px 1px 1px #000;
-}
+.fa-angle-double-down {
+    color: #2E8AFF;
+    font-style: bold;
+    font-size: 3rem;
+    text-shadow: 1px 1px 1px #000;
+  }
 
 /*---------------------------------------*/
 /* Skills--------------------------------*/
@@ -266,7 +266,7 @@ footer p {
   transition: color 0.2s;
 }
 
-footer .fab, footer .far {
+footer .fab, footer .far, footer .fa {
   margin: 0.2rem 0.1rem;
   color: #888;
   -webkit-transition: color 0.2s;
@@ -278,7 +278,7 @@ footer .fab, footer .far {
   color: #3b5998;
 }
 
-.fa-linkedin:hover {
+.fa-linkedin-square:hover {
   color: #007BB5;
 }
 
@@ -290,7 +290,7 @@ footer .fab, footer .far {
   color: #006BFF;
 }
 
-.fa-envelope:hover {
+.fa-envelope-o:hover {
   color: #0489c9;
 }
 
