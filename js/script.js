@@ -68,6 +68,21 @@ $(document).ready(function() {
           this.src = "img/freelancer.png";
         };
 
+      img = document.getElementById("fiverr-icon-footer");
+      img.onmouseout = function () {
+          this.src = "img/fiverr-transparent-gray.png";
+        };
+      img.onmouseover = function () {
+          this.src = "img/fiverr-transparent.png";
+        };
+
+      img = document.getElementById("freelancer-icon-footer");
+      img.onmouseout = function () {
+          this.src = "img/freelancer-gray.png";
+        };
+      img.onmouseover = function () {
+          this.src = "img/freelancer.png";
+        };
     // Infinite bounce --------------------------------------------------------------------------------------------------------------
     setInterval(function(){ testAnim();}, 500);
 
