@@ -166,23 +166,24 @@ h2{
 }
 
 #download-cv {
+  vertical-align: super;
+  margin-right: 0.3rem;
   font-weight: bold;
   text-align: center;
   padding: .375rem .75rem;
-  vertical-align: middle;
   color: white;
-  margin: auto;
   background-color: #888;
   border-radius: .25rem;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 #download-cv:hover {
-  background-color: #000;
+  background-color: #E85D00;
 }
 
 #download-cv i {
   margin-right: 0.37rem;
+  font-size: 1.5rem;
 }
 
 #scroll-down-cue {
@@ -252,14 +253,6 @@ h2{
 /*---------------------------------------*/
 /* Social Links--------------------------*/
 /*---------------------------------------*/
-/*
-social-links {
-  float: none;
-	width: 100%;
-	text-align: center;
-  padding: 0px;
-}
-*/
 
 footer p {
   display: block;
