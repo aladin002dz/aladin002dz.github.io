@@ -68,6 +68,14 @@ $(document).ready(function() {
           this.src = "img/freelancer.png";
         };
 
+      img = document.getElementById("medium-icon");
+      img.onmouseout = function () {
+          this.src = "img/medium-gray.png";
+        };
+      img.onmouseover = function () {
+          this.src = "img/medium.png";
+        };
+
       img = document.getElementById("fiverr-icon-footer");
       img.onmouseout = function () {
           this.src = "img/fiverr-transparent-gray.png";
