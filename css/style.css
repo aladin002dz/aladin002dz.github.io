@@ -312,3 +312,29 @@ footer p {
   color: #55acee;
 }
 
+
+/*------------------------------------------*/
+/* Mobile Display --------------------------*/
+/*------------------------------------------*/
+
+@media (max-width: 576px) { 
+  .welcome {
+    text-align: center;
+  }
+
+  .bio {
+    display: none;
+  }
+
+  .bio-brief{
+    text-align: left!important;
+    display: block;
+  }
+
+ }
+
+ @media (min-width: 576px) { 
+   .bio-brief{
+     display: none;
+   }
+ }
