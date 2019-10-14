@@ -119,7 +119,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   word-spacing: 2px;
   text-align: center;
   letter-spacing: 1px;
@@ -311,3 +311,4 @@ footer p {
 .fa-twitter:hover {
   color: #55acee;
 }
+
