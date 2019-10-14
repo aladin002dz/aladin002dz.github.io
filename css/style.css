@@ -172,7 +172,7 @@ h2{
   text-align: center;
   padding: .375rem .75rem;
   color: white;
-  background-color: #888;
+  background-color: #2E8AFF;
   border-radius: .25rem;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
