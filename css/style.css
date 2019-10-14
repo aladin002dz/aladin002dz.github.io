@@ -318,6 +318,7 @@ footer p {
 /*------------------------------------------*/
 
 @media (max-width: 576px) { 
+
   .welcome {
     text-align: center;
   }
@@ -331,10 +332,25 @@ footer p {
     display: block;
   }
 
+  .sm-none {
+    display: none;
+  }
+
+  .sm-block {
+    display: block;
+  }
+
  }
 
  @media (min-width: 576px) { 
    .bio-brief{
      display: none;
    }
+   .sm-none {
+    display: block;
+  }
+
+  .sm-block {
+    display: none;
+  }
  }
