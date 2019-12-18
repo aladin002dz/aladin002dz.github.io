@@ -283,9 +283,7 @@ footer p {
   color: #aaa;
 }
 
-
 .icon{
-  margin: 0;
   vertical-align: text-bottom;
   width: 2rem!important;
   height: 2rem!important;
@@ -321,8 +319,20 @@ footer p {
   color: #111;
 }
 
+#fa-youtube-play {
+  margin:0 1px;
+}
+
+.fa-youtube-play:hover {
+  color: #E62F2D;
+}
+
 .fa-behance-square:hover {
   color: #006BFF;
+}
+
+.img-icon{
+  margin: 0 3px;
 }
 
 .fa-envelope-o:hover {
