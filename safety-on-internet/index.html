@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Save the kids</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<style>
+		/* h1,h2,h3,h4,h5 {
+			-webkit-text-stroke-width: 5px;
+			-webkit-text-stroke-color: white;
+		} */
+		img {
+			border-width: 1px !important
+		}
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides" >
+
+				<section>
+					<h2>La sécurité dans le WEB</h2>
+				</section>
+
+				<section>
+					<section>
+						<h4>se protéger en tant que personne du domaine</h4>
+					</section>
+					<section>
+						<h1>ssh</h1>
+					</section>
+					<section>
+						<img src="./img/ssh.jpg" width="70%">
+					</section>
+					<section>
+						<h1>dDOS</h1>
+						<h4>Distributed Denial Of Service</h4>
+					</section>
+					<section>
+						<img src="./img/ddos.jpg" width="75%">
+					</section>
+					<section>
+						<h1>solution ?</h1>
+						<h4 class="fragment">aucune solution effective même en 2017 !</h4>
+					</section>
+					<section>
+						<h2>certaines solutions pour DOS software (chargement de la RAM)</h2>
+					</section>
+					<section>
+						<img src="./img/robot.jpg" width="50%">
+					</section>
+					<section>
+						<img src="./img/fail2ban.jpg" width="100%">
+					</section>
+
+
+					<section>
+						<h1>CSRF</h1>
+						<h4 class="fragment">Cross Site Request Forgery</h4>
+					</section>
+					<section>
+						<img src="./img/fail.jpg" width="120%">
+					</section>
+					<section>
+						<img src="./img/forgery.jpg" width="120%">
+					</section>
+					<section>
+						<h1>solution</h1>
+					</section>
+					<section style="font-family: monospace; text-align: left">
+						&lt;form&gt;<br>
+						&lt;input type="hidden" value={{TOKEN}}&gt;<br>
+						&lt;form&gt;<br>
+						où <code>TOKEN = un code d'authenticité</code>
+					</section>
+
+					<section>
+						<h1>XSS</h1>
+						<h4 class="fragment">Cross Site Scripting</h4>
+					</section>
+					<section>
+						<img src="./img/form.png" width="40%">
+					</section>
+					<section>
+						<h1>solution</h1>
+					</section>
+					<section>
+						<h4>"Échaper" les caractères dangereux comme 
+							<code>&lt; </code>
+							et 
+							<code>&gt;</code><br>
+							Et les remplacer par leurs équivalents 
+							<code style="text-transform: lowercase">&amp;lt;</code>
+							et
+							<code style="text-transform: lowercase">&amp;gt;</code><br>
+							donc <br>
+							<code style="text-transform: lowercase">&lt;script&gt;</code> sera <br> 
+							<code style="text-transform: lowercase">&amp;lt;script&amp;gt;</code>
+						</h4>
+					</section>
+
+					<section>
+						<h1>sql injection</h1>
+					</section>
+					<section>
+						<img src="./img/detect.png" width="100%">
+					</section>
+					<section>
+						<code>
+							select username,passw from users where username='$uname' and password='$passwrd';
+						</code>
+						<p>on met alors </p>
+						<code>Username : ' or 1--<br>
+							Password :</code><br>
+						<code>
+							select username,passw from users where username='' or true--<span style="color:red">' and password='';</span>
+						</code>
+					</section>
+					<section>
+						<h2>ou pire !</h2>
+					</section>
+					<section>
+						<img src="./img/injection.jpg" width="100%">
+					</section>
+					<section>
+						<h1>solution</h1>
+					</section>
+					<section>
+						<h1>sanitizing the request</h1>
+						<h3 class="fragment">ce qui veut dire, utiliser les mêmes méthodes pour prévenir xss, parceque
+							tout est à cause des caractères dangereux qui doivent être échapés
+						</h3>
+					</section>
+					<section>
+						<h1>solutions hardware</h1>
+					</section>
+					<section>
+							<h1>
+								utiliser un waf
+							</h1>
+							<h5 class="fragment">Web Application Firewall</h5>
+					</section>
+					<section>
+							<h1>waf</h1>
+							<h4 class="fragment">ce qu'on connais comme antivirus pour nos machine</h4>
+					</section>
+	
+					<section>
+							<h2>Utiliser un reverse proxy</h2>
+					</section>
+					<section>
+							<img src="./img/reverse.jpg" width="100%">
+					</section>
+
+					<section>
+							<h4>se protéger en tant qu'utilisateur</h4>
+					</section>
+					<section>
+						<h1>Phishing</h1>
+					</section>
+					<section>
+						<img src="./img/phishing.jpg" width="70%">
+					</section>
+					<section>
+						<h1>solution</h1>
+					</section>
+					<section>
+						<h1>https</h1>
+						<h4 class="fragment">https ne crypte pas uniquement les données</h4>
+						<h4 class="fragment">https vous donne aussi l'authenticité du site web</h4>
+					</section>
+					<section>
+						<img src="./img/https.png" width="60%">
+					</section>
+					<section>
+						<img src="./img/eccp.jpg" width="70%">
+					</section>
+					<section>
+						<h2>sécuriser tout ça ?</h2>
+					</section>
+					<section>
+						<img src="./img/hacker.jpg" alt="">
+					</section>
+					<section>
+						<h4>Il existe plus simple !</h4>
+					</section>
+					<section>
+						<h3>les escrocs "old school"</h3>
+					</section>
+					<section>
+						<img src="./img/scammer.jpg" alt="">
+					</section>
+
+					<section>
+						<h1>on est en 2017</h1>
+					</section>
+					<section>
+						<img src="./img/fb1.png" width="70%">
+					</section>
+					<section>
+						<img src="./img/fb2.png" width="80%">
+					</section>
+					<section>
+							<img src="./img/maniefest.png" width="35%">
+					</section>
+					<section>
+						<h2 style="color: orange">lisez bien avant de valider ^_^</h2>
+						<h3>exemple: </h3>
+						<ul>
+							<li class="fragment">Un jeu de plateforme qui vous demande un accès à votre appareil photo</li>
+							<li class="fragment">Les applications qui postent sur Facebook, faites attention !</li>
+						</ul>
+					</section>
+					<section>
+						<h2 style="color: orange">n'utilisez pas kali linux</h2>
+						<h3 class="fragment">un script kiddi est la première victime du virus</h3>
+					</section>
+					<section>
+						<img src="./img/anykey.jpg" width="50%">
+					</section>
+
+					
+
+
+				</section>
+
+				<section data-background="./img/street.png">
+					<section>
+						<img src="./img/street.jpg" width="80%">
+					</section>
+
+					<section>
+						<h2 class="fragment">Vous avez eu peur ?</h2>
+						<h2 class="fragment">Vous ne laisserez jamais  votre enfant ici à cette heure ?</h2>
+						<h3 class="fragment">Et pourtant ...</h3>
+					</section>
+
+					<section>
+						<img src="./img/sleep.jpg">
+					</section>
+
+				</section>
+
+				<section data-background="./img/sphere.png">
+
+					<section>
+						<h2>Comment Internet vous voit?</h2>
+					</section>
+
+					<section data-background="./img/ua.png">
+						<h1 class="fragment">User Agent</h1>
+						<code class="fragment">Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36</code>
+					</section>
+							 						
+				</section>
+
+				<section data-background="./img/crime.png">
+					<section>
+						<ul>
+							<li>
+								107 délits informatiques en 2013, alors qu’il se chiffrait seulement à 47 cas en 2010, 
+								dont 12 cas liés aux atteintes à la vie privée des personnes et 5 autres cas liés à la moralité publique. 
+							</li>
+							<li class="fragment">
+								le nombre d’affaires liées à l'exploitation des images 
+								sexuelles d’enfants en 2013 a atteint 05 cas
+							</li>
+							<li class="fragment">
+								la diffamation (28 cas), suivis par les affaires liées à l’usurpation de fonction et qui se comptabilisent aux 
+								alentours de 21 cas. 
+								Les affaires enregistrées dans le domaine de l'incursion et la pénétration de systèmes électroniques, 
+								sont au nombre de 20 cas, en plus de huit (08) cas liés aux insultes d’institutions étatiques
+								et huit (08) cas de chantage
+							</li>
+						</ul>
+						<code style="font-size: 0.3em" >source 2013 : https://www.reflexiondz.net/UN-CRIME-ELECTRONIQUE-EN-ALGERIE-La-DGSN-traque-les-createurs-de-sites-incitant-au-terrorisme-_a28529.html</code>
+					</section>
+
+					<section>
+						<ul>
+							<li>
+								73 mineurs, dont 59 filles, ont été victimes de maltraitance sexuelle via les réseaux sociaux
+							</li>
+							<li class="fragment">
+								Des enquêtes menées durant la période allant de 2008 à 2011 ont abouti à la découverte de vidéos 
+								de pornographie infantile à travers des portables et leur diffusion sur internet.
+							</li>
+							<li class="fragment">
+									Selon les statistiques fournies par la Fondation nationale pour la promotion de la santé et le développement de la recherche (Forem), 
+									77% des enfants en Algérie passent leur temps à surfer sur la Toile
+							</li>
+						</ul>
+						<code style="font-size: 0.3em" >source 2016 : https://www.djazairess.com/fr/horizons/196404</code>
+					</section>
+					
+					<section data-background="./img/suicide.png">
+						<img src="./img/blue.jpg" width="80%">
+					</section>
+
+					<section style="direction: rtl" data-background="./img/suicide.png">
+						<ul>
+							<li>
+								في ظاهرة باتت محيّرة في الجزائر، انتحر مراهقان في مدينة بجاية شرق الجزائر بعد أيام من الإدمان على لعبة "الحوت الأزرق"، وبهذا يرتفع عدد ضحايا هذه اللعبة القاتلة المحرّضة على الانتحار في أقلّ من شهر إلى 5 أشخاص.
+							</li>
+							<li class="fragment">
+								المراهقان اللذان انتحرا شنقاً، يدرسان في نفس الثانوية بدائرة "سيدي عيش" التابعة لولاية بجاية، وهما "بلال" و"فيروز" البالغان من العمر 16 سنة
+							</li>
+							<li class="fragment">
+								وكانت مدينة سطيف شهدت في أقل من شهر انتحار 3 أطفال، بعد أن أقدم هذا الأسبوع طفل يبلغ من العمر 15 سنة على شنق نفسه بحبل، وذلك عقب انتحار طفل في التاسعة من عمره، وقبلهما ضحية أولى يبلغ من العمر 11 سنة توفي في شهر نوفمبر الماضي، بعد أن وضع حدا لحياته بشنق نفسه داخل غرفته بالمنزل، فيما نجت تلميذة أخرى من الموت، بعد إنقاذها عندما حاولت الانتحار، بقطع أحد شرايين يدها
+							</li>
+						</ul>
+						<code style="font-size: 0.3em" >source 2017 : http://www.alarabiya.net/ar/north-africa/2017/12/09/%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D8%A7%D9%84%D8%AD%D9%88%D8%AA-%D8%A7%D9%84%D8%A3%D8%B2%D8%B1%D9%82-%D9%8A%D9%88%D8%A7%D8%B5%D9%84-%D8%B4%D9%86%D9%82-%D8%A7%D9%84%D8%A3%D8%B7%D9%81%D8%A7%D9%84.html</code>
+					</section>
+
+					<section>
+						<h2 class="fragment">ce jeu n'est pas une application</h2>
+						<h3 class="fragment">ce jeu a besoin d'une vraie personne au bout du fil</h3>
+						<h3 class="fragment">L'application sera un "virus" qui aura tout les droits d'accès sur smartphone (souvenez vous des manifest de Android)</h3>
+					</section>
+					<section>
+						<img src="./img/saw.jpg" width="100%">
+					</section>
+
+					<section>
+							<img src="./img/googleprotect.png" width="100%">
+					</section>
+
+					<section data-background="./img/suicide.png">
+						<h2>Les 50 challenges de ce "défis"</h2>
+					</section>
+
+					<section data-background="./img/suicide.png">
+						<ol>	
+							<li>Écrire une phrase dans le bras de a victime</li>
+							<li class="fragment">Se réveiller à 4:20 du matin et voir une vidéo terrifiante (envoyé par l'admin)</li>
+							<li class="fragment">Se couper la main d'une manière légère</li>
+							<li class="fragment">Dessiner une baleine dans un bout de papier</li>
+							<li class="fragment">Écrire "OUI" dans la cuisse de la personne, sinon se couper plusieurs fois le bras</li>
+							<li class="fragment">Tâche secrète</li>
+							<li class="fragment">Répéter 1</li>
+							<li class="fragment">Écrire un status Online à propos de la baleine</li>
+							<li class="fragment">Dépasser une peur/phobie</li>
+							<li class="fragment">Se réveiller à 4:20 du matin et aller au toit de la maison</li>
+						</ol>
+					</section>	
+				
+					<section data-background="./img/suicide.png">
+						<ol start="11">	
+							<li>Regarder des vidéos terrifiante à longueure de la journée</li>
+							<li class="fragment">Écouter de la musique que l'admin envoie</li>
+							<li class="fragment">Se couper les lèvres</li>
+							<li class="fragment">Piquer quelqu'un avec une aiguille</li>
+							<li class="fragment">Se faire du mal ou tomber malade</li>
+							<li class="fragment">Aller au toit de la maison et se mettre à la limite</li>
+							<li class="fragment">Aller vers un pont</li>
+							<li class="fragment">Grimper sur une grue</li>
+							<li class="fragment">À ce stade, l'admin vérifies si le candidat est digne de confiance</li>
+							<li class="fragment">Discuter sur Skype avec "La beleine"</li>
+							<li class="fragment">S'asseoir au bord du toit de la maison en balançant les pieds vers le vide</li>
+						</ol>
+					</section>
+
+					<section data-background="./img/suicide.png">
+						<ol start="22">	
+							<li>Opération secrète</li>
+							<li class="fragment">Opération secrète</li>
+							<li class="fragment">Rencontrer "La baleine"</li>
+							<li class="fragment">L'admin "fixe" à la victime la date de sa mort</li>
+							<li class="fragment">Visiter une rail de train</li>
+							<li class="fragment">Ne pas discuter avec personne tout au long de la journée</li>
+							<li class="fragment">Donner une promesse de devenir une "Baleine"</li>
+							<li class="fragment">Les étapes de 30 à 49 consistent à voir des vidéos "horribles" et d'écouter de la musique en boucle que l'admin envoi, parler à une baleine, se couper</li>
+						</ol>
+					</section>
+
+					<section data-background="./img/death.png">
+						<h1>50. La mort</h1>
+					</section>
+
+					<section>
+						<h4>Le danger ne se trouve pas  uniquement sur internet</h4>
+					</section>
+
+					<section>
+						<h3>si vous avez un vieux flash disque / carte mémoire, ne la vendez jamais, détruisez la physiquement !</h3>
+						<h3 class="fragment">si vous vendez votre smartphone, flashez le avant, ou ne le vendez pas ^_^</h3>
+					</section>
+
+				</section>
+
+				<section>
+
+					<section>
+						<h2>pourquoi ça sera si difficile de contrôler sur internet ?</h2>
+					</section>
+
+					<section>
+						<h2>un peu de stats</h2>
+					</section>
+					<section>
+						<img src="./img/dzstats.png" alt="">
+					</section>
+					<section>
+							<img src="./img/mobile.png" alt="">
+					</section>
+					<section>
+							<img src="./img/social.png" alt="">
+					</section>
+						
+					<section>
+						<img src="./img/fb.png" alt="">
+					</section>
+					
+					<section>
+							<ul>
+									<li>53% femmes, 47% hommes</li>
+									<li class="fragment">En moyenne, un utilisateur a 155 amis</li>
+									<li class="fragment">87% des utilisateurs online qui sont entre 18-29 ans sont sur Facebook</li>
+									<li class="fragment">En Janvier 2016, plus de 100 millions d'heures de vidéos ont été visualisées</li>
+									<li class="fragment">En moyenne, un utilisateur est abonné à 80 pages</li>
+									<li class="fragment">4000 photos sont uploadées chaque seconde !</li>
+									<li class="fragment">55 millions de status sont mis à jour chaque jour</li>
+								</ul>
+								<code style="font-size: 0.3em" >source 2016 : https://www.omnicoreagency.com/facebook-statistics/</code>
+								
+					</section>
+
+					<section>
+						<h2>peu importe l'évolution de l'intelligence artificielle actuelle, elle ne pourra pas détecter les crimes sur tout ce "big data"</h2>
+					</section>
+
+				</section>
+				
+				<section data-background="./img/prevent.png">
+					<section >
+						<h2>prévenir mieux que guérir</h2>
+					</section>
+
+					<section>
+						<ul>
+							<li class="fragment">Éviter les murs de discussion et tabous </li>
+							<li class="fragment">L'informatique est un outil, il faut se documenter sur son utilité,
+								ce n'est pas une fatalité !
+							</li>
+							<li class="fragment">Comprendre que l'informatique est une partie de la vie actuelle, et non un domaine spécial pour "geek"</li>
+							<li class="fragment">Surveiller les enfants et tout ce qu'ils font sur Internet</li>
+							<li class="fragment">Chercher le mode "Contrôle Parental" dans les outils et logiciels</li>
+							<li class="fragment">Exiger un âge mature pour l'activation de Facebook gratuit auprès des opérateurs téléphonique !</li>
+							<li class="fragment">Le VPN est un danger !</li>
+							<li class="fragment">Interdire ET INTERDIRE le Deep-Web à ses enfants !</li>
+							<li class="fragment">Sensibiliser les ados et ce, sans tabous ! il faut être directe !</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>quelques astuces</h2>
+					</section>
+
+					<section>
+						<h3>Protéger la connexion de son enfant</h3>
+					</section>
+
+					<section>
+						<img src="./img/norton.png" alt="">
+						<h3 class="fragment">Symantec a inventé un DNS appelé Safe Web</h3>
+						<h4 class="fragment">il faut le configurer dans le routeur et non sur la machine, ainsi, tout 
+							ceux qui se connectent au router seront contrôlés
+						</h4>
+					</section>
+					<section>
+						<img src="./img/protect1.png" alt="">
+					</section>
+					<section>
+						<img src="./img/protect2.png" alt="">
+					</section>
+					<section>
+						<img src="./img/protect3.png" alt="">
+					</section>
+					<section>
+						<h4>Activer le contrôle parental sur Google Play</h4>
+					</section>
+					<section>
+						<img src="./img/p1.jpg" width="30%">
+					</section>
+					<section>
+						<img src="./img/p2.jpg" width="30%">
+					</section>
+					<section>
+						<img src="./img/p3.jpg" width="30%">
+					</section>
+					<section>
+						<img src="./img/p4.jpg" width="30%">
+					</section>
+					<section>
+						<img src="./img/p5.jpg" width="30%">
+					</section>
+					<section>
+						<img src="./img/p6.jpg" width="30%">
+					</section>
+					<section>
+						<img src="./img/p7.jpg" width="30%">
+					</section>
+					<section>
+						<img src="./img/p8.jpg" width="30%">
+					</section>
+					<section>
+						<img src="./img/p9.jpg" width="30%">
+					</section>
+					
+					<section>
+						<h2>autres solutions</h2>
+						<ul>
+							<li class="fragment">Arrêter les droits d'accès de certains applications</li>
+							<li class="fragment">Ne jamais "rooter" son smartphone Android</li>
+							<li class="fragment">Nettoyer son Facebook des jeux et applications non utilisables</li>
+							<li class="fragment">Nettoyer son Facebook des "personnes inutiles"</li>
+							<li class="fragment">Quitter les groupes fermés inutilisés, vous êtes une cible facile quand un groupe est fermé</li>
+							<li class="fragment">N'acceptez pas ceux que vous ne connaissez pas "très bien"</li>
+							<li class="fragment">Il existe des "pages" pour les gens connus, n'acceptez jamais
+								leurs demandes d'ajouts sous prétexte d'être connus (chanteurs par exemple) !
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h1>Safebook</h1>
+					</section>
+					<section>
+						<img src="./img/safebook.jpg" width="40%">
+					</section>
+
+					<section>
+						<h2>N'oubliez jamais</h2>
+						<h3 class="fragment">l'outil ne vous protégera jamais assez </h3>
+					</section>
+
+					<section>
+							<img src="./img/rock.jpg" width="35%">
+					</section>
+
+					<section>
+						<h3>alors</h3>
+						<img class="fragment" src="./img/aware.jpg" width="40%">
+					</section>
+				</section>
+
+				<section>
+					<img src="./img/merci.png" width="90%">
+				</section>
+				
+
+				
+
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				width: 1200,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

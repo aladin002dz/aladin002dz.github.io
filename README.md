@@ -1,6 +1,4 @@
-aladin002dz.github.io
-=====================
+# My Personal Website Code
 
-https://aladindev.com/
-
-https://aladin002dz.github.io/
+Welcome to my personal website code.  
+visit it [here](https://aladin002dz.github.io)

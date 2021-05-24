@@ -1,124 +1,263 @@
 <!DOCTYPE html>
 <!-- saved from url=http://www.aladindev.com/ -->
 <html lang="en">
-    <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="Description" content="Mahfoudh(Aladin) Arous. Software developer and online freelancer.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Mahfoudh (Aladin) Arous|Software Developer</title>
-    <!-- <link rel="stylesheet" type="text/css"  href="css/bootstrap.min.css"> -->
-    <link rel="stylesheet" type="text/css"  href="css/bootstrap-3.3.7.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
-    <!--
-    <link rel="stylesheet" type="text/css"  href="css/font-awesome.min.css">
-    -->
-    <link rel="stylesheet" type="text/css"  href="css/normalize.css">
-    <link rel="stylesheet" type="text/css"  href="css/animate.css">
-    <link rel="stylesheet" type="text/css"  href="css/style.css">
-    </head> 
-    <body>
-    <!------------------------------------------------------------------------------------------------------>
-    <!Navigation Bar---------------------------------------------------------------------------------------->
-    <!------------------------------------------------------------------------------------------------------>
-      <header>
-          <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-              <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topFixedNavbar1" aria-expanded="false"><span class="sr-only">Aladin Toggle</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                <a class="navbar-brand" href="#welcome">Aladin</a></div>
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse" id="topFixedNavbar1">
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#welcome" class=" link aboutLink active">About</a></li>
-                  <li><a href="#skills" class=" link skillsLink">Skills</a></li>
-                  <li><a href="#projects" class="link projectsLink">Projects</a></li>
-                </ul>
-              </div>
-            </div>
-          </nav>        
-      </header>  
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148953876-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-148953876-1');
+  </script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Mahfoudh (Aladin) Arous|Full Stack Developer</title>
+  <meta name="Description" content="Mahfoudh(Aladin) Arous. Software Engineer, Full Stack Developer and Online Freelancer.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+  <!------------------------------------------------------------------------------------------------------>
+  <!Navigation Bar---------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------------>
+  <header>
+    <div class="container">
+    <nav class="navbar navbar-expand-lg justify-content-between px-0">
+      <a class="navbar-brand" href="#welcome">Aladin</a>     
+      <button class="navbar-toggler text-black" type="button" data-toggle="collapse" data-target="#topFixedNavbar1" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon text-dark">
+          <svg class="navbar-toggler-icon text-dark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>
+        </span>
+      </button>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse justify-content-end" id="topFixedNavbar1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#welcome" class=" link aboutLink active">About</a></li>
+          <li><a href="#skills" class=" link skillsLink">Skills</a></li>
+          <li><a href="#projects" class="link projectsLink">Projects</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  </header>
   <!------------------------------------------------------------------------------------------------------>
   <!Welcome------------------------------------------------------------------------------------------------>
   <!------------------------------------------------------------------------------------------------------>
   <section class="welcome" id="welcome">
-      <div class="col-lg-10 col-lg-offset-1">
-        <div class="row">
-          <div class="col-sm-4 col-md-4 ">
-              <img src="img/aladin.jpg">
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <img id="photo" src="img/aladin.jpg">
+      </div>
+      <div class="col-sm-12 col-md-8">
+        <h2>Hi, I'm aladin!</h2>
+
+          <div class="bio">
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;I graduated as <b>Software Engineer</b> in 2001 and I’ve been for more than 20 years in
+              software engineering with the same passion as the first times. </p>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;Member of <b>"React Community"</b>, my main field of work is in <b>Web Development</b> and <b>JavaScript</b>. I also work in <b>.Net</b> technologies: (C#, ASP.NET, WPF, Entity Framework...), Android apps and many other technologies and tools.</p>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;Languages: <b>Arabic</b>/<b>French</b>/<b>English</b>.</p>          
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;Looking forward to get in touch with you! </p>
           </div>
-          <div class="col-sm-8 col-md-8">
-              <h2>Hi, I'm aladin!</h2>
-              <p> &nbsp;&nbsp;&nbsp;&nbsp;I graduated as software engineer in 2001 and I’ve been for more than 20 years in software engineering with the same passion as the first times. </p>
-              <p> &nbsp;&nbsp;&nbsp;&nbsp;My main field of work is in .net technologies: (C#, WPF, ASP, Entity Framework...), I make Android apps, and also work in many other technologies and tools. </p>
-              <p> &nbsp;&nbsp;&nbsp;&nbsp;Looking forward to get in touch with you! </p>
-              <br>
+          <div class="bio-brief">
+            <ul>
+              <li>University graduate, Software Engineer 2001.</li>
+              <li>Bachelor degree in Web Development 2019.</li>  
+              <li>Member of "React Community".</li>  
+              <li>I speak: Arabic / French / English.</li>  
+            </ul>
           </div>
+          <p>
+            <a href="https://aladinstudio.com/" target="_blank" class="icon align-self-center header-button">
+              <i style="color: white;" class="fa fa-external-link " aria-hidden="true"></i>Go to My New Website
+            </a>
+            <a href="./img/MahfoudhAROUS-CV-En.pdf" target="_blank" class="icon align-self-center header-button ">
+              <i style="color: white;" class="fa fa-download" aria-hidden="true"></i>Download CV
+            </a>
+          </p>
+          <p style="color:#E85D00;">
+            <b>Get in touch:</b> 
+          </p>
+          <p class="social-links d-flex align-items-center">
+            <a href="https://www.linkedin.com/in/mahfoudh-arous-39761484?trk=nav_responsive_tab_profile" target="_blank"
+              class="icon">
+              <i class="fa fa-linkedin-square"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100007573068750" target="_blank" class="icon"><i class="fa fa-facebook-square"></i></a>            
+            <a href="https://github.com/aladin002dz" target="_blank" class="icon"><i class="fa fa-github"></i></a>            
+            <a href="https://www.youtube.com/channel/UCs03m_fP9-ijDyHmj15m-Jw" target="_blank" id="fa-youtube-play">
+              <i class="fa fa-youtube-play"></i>
+            </a>            
+            <a href="https://medium.com/@mahfoudh.arous" target="_blank" class="img-icon icon d-sm-block d-none">
+              <img src="img/medium-gray.png" id="medium-icon" alt="medium" class="icon">
+            </a>            
+            <a href="https://www.fiverr.com/aladin02dz" target="_blank" class="img-icon">
+              <img src="img/fiverr-transparent-gray.png" id="fiverr-icon" alt="Fiverr" class="fiverr-icon icon">
+            </a>
+            <a href="https://www.freelancer.com/u/aladin02dz" target="_blank" class="img-icon d-sm-block d-none">
+              <img src="img/freelancer-gray.png" id="freelancer-icon"
+                alt="Freelancer.com" class="freelancer-icon icon">
+            </a>
+            <a href="https://www.behance.net/aladin02dz1ff3" target="_blank" class="icon d-sm-block d-none"><i class="fa fa-behance-square hidden-sm hidden-xs"></i></a>
+            <a href="mailto:mahfoudh.arous@gmail.com" target="_blank" class="icon"><i class="fa fa-envelope-o hidden-sm hidden-xs"></i></a>
+            <a href="https://twitter.com/aladin02dz" target="_blank" class="icon"><i class="fa fa-twitter hidden-sm hidden-xs"></i></a>
+          </p>
+          <br>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div id="scroll-down-cue">
+        <a href="#skills">
+          <i class="fa fa-angle-double-down"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!------------------------------------------------------------------------------------------------------>
+  <!Skills------------------------------------------------------------------------------------------------>
+  <!------------------------------------------------------------------------------------------------------>
+  <section id="skills">
+    <div class="row">
+      <div class="col-sm-6 col-md-4">
+        <div class="mx-auto icon-big">
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="graduation-cap" class="svg-inline--fa fa-graduation-cap fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg>
         </div>
-      </div>
-  <div class="col-lg-10 col-lg-offset-1">
-      <div class="row">
-          <div id="scroll-down-cue">
-              <a href="#skills">
-                <i class="fa fa-angle-double-down"></i>
-              </a>
-          </div>
-      </div>
-  </div>
-    </section>
-    <!------------------------------------------------------------------------------------------------------>
-    <!Skills------------------------------------------------------------------------------------------------>
-    <!------------------------------------------------------------------------------------------------------> 
-    <section class="skills" id="skills" class="row">
-      <div class="col-lg-10 col-lg-offset-1">
-        <div class="row">
-          <div class="col-sm-6 col-md-4">
-              <i class="fa fa-graduation-cap fa-5 icon-big" aria-hidden="true"></i>
-              <h3><b>Certifications</b></h3>
-              <ul>
-                <li>
-                  <p>Build Responsive Real World Websites with HTML5 and CSS3</p>
-                  <p>by <a href="https://www.udemy.com/certificate/UC-46UBD1Z0/" target="_blank">Udemy</a></p>
-                </li>
-                <li>
-                  <p>The Complete ASP.NET MVC 5 Course</p>
-                  <p>by <a href="https://www.udemy.com/certificate/UC-6GK3F8T1/" target="_blank">Udemy</a></p>
-                </li>
-                <li>
-                  <p>Secure VPS with DigitalOcean Nginx Letsencrypt Ubuntu</p>
-                  <p>by <a href="https://www.udemy.com/certificate/UC-WNDDP1G2/" target="_blank">Udemy</a></p>
-                </li>
+        <h3>Certifications</h3>
+        <ul class="sm-none">          
+          <li>
+            <p>Build Web Apps with ReactJS - Openclassrooms - 2018.</p>
+          </li>
+          <li>
+            <p>HTML5 and CSS3:</p>
+            <p>
+              <ul style="margin-left: 1rem;">
+                <li>OpenClassrooms – 2018.</li>
+                <li>Udemy - 2017.</li>
               </ul>
-          </div>
-          <div class="col-sm-6 col-md-4">
-              <i class="fa fa-terminal fa-5 icon-big" aria-hidden="true"></i>
-              <h3><b>Experience</b></h3>
-              <lu>
-                <li>C#( Desktop, WPF, Entity Framework, ASP MVC,...).</li>
-                <br>
-                <li>Java(Android, Exoplayer,...)</li>
-                <br>
-                <li>Web: html, css, jQuery,...</li>
-              </lu>
-          </div>
-          <div class="col-sm-6 col-md-4">
-              <i class="fa fa-rocket fa-5 icon-big" aria-hidden="true"></i>
-              <h3><b>Learning</b></h3>
-             <ul>
-               <li>JavaScript Angular.</li>
-               <br>
-               <li>ASP .Net Core.</li>
-             </ul> 
-            </div>
-        </div>
+            </p>
+          </li>
+          <li>
+            <p>Full Stack Developer - Udacity - 2018.</p>
+          </li>
+          <li>
+            <p>The Complete ASP.NET MVC 5 Course - Udemy – 2017.</p>
+          </li>
+          <li>
+            <p>Secure VPS with DigitalOcean Nginx Letsencrypt Ubuntu – Udemy – 2017.</p>
+          </li>
+        </ul>
+        <ul class="sm-block">
+          <li>
+            Web development.
+          </li>
+          <li>
+            React,JS.
+          </li>
+          <li>
+            Asp.Net.
+          </li>
+          <li>
+            Server Administration.
+          </li>
+
+        </ul>
+        <em><a href="https://drive.google.com/drive/folders/1Sisab5xVFNZNDj0Bgy3qFo_8O-z68dpQ?usp=sharing"
+          target="_blank">Link to the folder of my complete list of certificates</a></em>
       </div>
-    </section>
-    <!------------------------------------------------------------------------------------------------------>
-    <!Projects---------------------------------------------------------------------------------------------->
-    <!------------------------------------------------------------------------------------------------------> 
-    <section class="projects" id="projects" class="row">
-      <div class="col-lg-10 col-lg-offset-1">
+      <div class="col-sm-6 col-md-4">
+        <div class="mx-auto icon-big">
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="terminal" class="svg-inline--fa fa-terminal fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z"></path></svg>
+        </div>
+        <h3>Experience</h3>
+        <lu>
+          <li>React.</li>
+          <br>
+          <li>Web: html, css, jQuery,...</li>
+          <br>
+          <li>C#( Desktop, WPF, Entity Framework, ASP MVC,...).</li>
+          <br>
+          <li>Java(Android, Exoplayer,...).</li>
+          <br>
+          <li>Wordpress.</li>
+        </lu>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="mx-auto icon-big">
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="rocket" class="svg-inline--fa fa-rocket fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505.05 19.1a15.89 15.89 0 0 0-12.2-12.2C460.65 0 435.46 0 410.36 0c-103.2 0-165.1 55.2-211.29 128H94.87A48 48 0 0 0 52 154.49l-49.42 98.8A24 24 0 0 0 24.07 288h103.77l-22.47 22.47a32 32 0 0 0 0 45.25l50.9 50.91a32 32 0 0 0 45.26 0L224 384.16V488a24 24 0 0 0 34.7 21.49l98.7-49.39a47.91 47.91 0 0 0 26.5-42.9V312.79c72.59-46.3 128-108.4 128-211.09.1-25.2.1-50.4-6.85-82.6zM384 168a40 40 0 1 1 40-40 40 40 0 0 1-40 40z"></path></svg>
+        </div>
+        <h3>Learning</h3>
+        <ul>
+          <li>MERN Stack.</li>
+          <br>
+          <li>GraphQL.</li>
+          <br>
+          <li>Machine Learning.</li>
+          <br>
+          <li>Docker.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!------------------------------------------------------------------------------------------------------>
+  <!Projects---------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------------>
+  <section id="projects">
+    <div class="row">
+      <div class="mx-auto">
+        <h3>Recent Projects</h3>
+        <div class="row projectListing">
+          <div class="col-sm-6 col-md-4">
+            <img src="img/yammies.png">
+          </div>
+          <div class="col-sm-6 col-md-8">
+            <p>
+              A project to review existing restaurants, or add a new restaurants in the app database.
+            </p>
+            <a href="https://yammies.netlify.com/" target="_blank">Visit here</a>
+          </div>
+        </div>
+        <div class="row projectListing">
+          <div class="col-sm-6 col-md-8">
+            <p>
+              A web app to get any movie data, buit with ReactJS, Open Source code on github: <a href="https://github.com/aladin002dz/GetMovieData" target="_blank">here</a>
+            </p>
+            <a href="https://getmoviedata.netlify.com/" target="_blank">Visit
+              here</a>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <img src="img/FireShot_getmoviedata.netlify.com_.png">
+          </div>
+        </div>
+        <div class="row projectListing">
+          <div class="col-sm-6 col-md-4">
+            <img src="img/mebook.png">
+          </div>
+          <div class="col-sm-6 col-md-8">
+            <p>
+              A template to sell ebook, made in HTML, CSS and some JS libraries. You can find source code on Github here:
+              <a href="https://github.com/aladin002dz/mEbook" target="_blank">link</a>
+            </p>
+            <a href="https://aladindev.com/mEbook/" target="_blank">Visit here</a>
+          </div>
+        </div>
+        <div class="row projectListing">
+          <div class="col-sm-6 col-md-8">
+            <p>
+              An app for the web multimedia group <a href="http://www.neotvbox.com/">Neotv Box</a>
+              the app provide a smooth streaming and nice features like social media or calling the business provider:
+            </p>
+            <a href="https://play.google.com/store/apps/details?id=com.eminayar.autoradiouae&hl=en" target="_blank">Visit
+              here</a>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <img src="img/WebRadio.jpg">
+          </div>
+        </div>
         <div class="row projectListing">
           <div class="col-sm-6 col-md-4">
             <img src="img/Omnifood.png">
@@ -126,99 +265,45 @@
           <div class="col-sm-6 col-md-8">
             <p>
               Responsive Real World Website For a Restaurant with HTML5 and CSS3.
-            </p>  
-            <a href="https://aladindev.com/build-resp-website/">Visit here</a>                
+            </p>
+            <a href="https://aladindev.com/build-resp-website/" target="_blank">Visit here</a>
           </div>
-      </div>
-      <div class="row projectListing">
-        <div class="col-sm-6 col-md-8">
-          <p>
-            An app for the web multimedia group <a href="http://www.neotvbox.com/">Neotv Box</a> 
-            the app provide a smooth streaming and nice features like social media or calling the business provider:
-          </p>
-          <a href="https://play.google.com/store/apps/details?id=com.eminayar.autoradiouae&hl=en">Visit here</a>  
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <img src="img/WebRadio.jpg">
         </div>
       </div>
-    </section>
-    <!------------------------------------------------------------------------------------------------------>
-    <!Footer------------------------------------------------------------------------------------------------>
-    <!------------------------------------------------------------------------------------------------------>
-    <footer>
-      <div class="col-lg-10 col-lg-offset-1">
-          <div class="row">
-            <div class="col-sm-6 col-md-6  col-sm-offset-3  col-md-offset-3 social-links">
-                <a href="https://www.fiverr.com/aladin02dz" target="_blank"><img src="img/fiverr-transparent-gray.png" id="fiverr-icon" alt="Fiverr" class="icon"></a> 
-            <!--</div>
-            <div class="col-sm-1 col-md-2  link-icon">-->
-                <a href="https://www.freelancer.com/u/aladin02dz" target="_blank"><img src="img/freelancer-gray.png" id="freelancer-icon" alt="Freelancer.com" class="icon"></a> 
-            <!--</div>
-            <div class="col-sm-1 col-md-2  link-icon">-->
-                <a href="https://www.facebook.com/profile.php?id=100007573068750" target="_blank"><i class="fa fa-facebook-square"></i></a> 
-            <!--</div>
-            <div class="col-sm-1 col-md-2  link-icon">-->
-                <a href="https://www.linkedin.com/in/mahfoudh-arous-39761484?trk=nav_responsive_tab_profile" target="_blank"><i class="fa fa-linkedin-square"></i></a> 
-            <!--</div>
-            <div class="col-sm-1 col-md-2  link-icon">-->
-                <a href="https://github.com/aladin002dz" target="_blank"><i class="fa fa-github"></i></a> 
-            <!--</div>
-            <div class="col-sm-1 col-md-2  link-icon">-->
-                <a href="mailto:aladin02dz@hotmail.fr"><i class="fa fa-envelope-o hidden-sm hidden-xs"></i></a> 
-            <!--</div>
-            <div class="col-sm-1 col-md-2  link-icon">-->
-                <a href="https://twitter.com/aladin02dz" target="_blank"><i class="fa fa-twitter hidden-sm hidden-xs"></i></a>
-            </div>
-          </div>
-          <div class="row">
-                <p id="copyright"></p>
-          </div> 
+    </div>
+  </section>
+  <!------------------------------------------------------------------------------------------------------>
+  <!Footer------------------------------------------------------------------------------------------------>
+  <!------------------------------------------------------------------------------------------------------>
+  <footer>
+    <div class="row">
+      <div class="col social-links d-flex justify-content-center">
+        <a href="https://www.linkedin.com/in/mahfoudh-arous-39761484?trk=nav_responsive_tab_profile" target="_blank"
+          class="icon">
+          <i class="fa fa-linkedin-square"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100007573068750" target="_blank" class="icon"><i class="fa fa-facebook-square"></i></a>
+        <a href="https://www.youtube.com/channel/UCs03m_fP9-ijDyHmj15m-Jw" target="_blank" id="fa-youtube-play">
+          <i class="fa fa-youtube-play"></i>
+        </a>  
+        <a href="https://www.fiverr.com/aladin02dz" target="_blank"><img src="img/fiverr-transparent-gray.png" id="fiverr-icon-footer"
+            alt="Fiverr" class="icon"></a>
+        <a href="https://www.freelancer.com/u/aladin02dz" target="_blank" class="d-sm-block d-none"><img src="img/freelancer-gray.png" id="freelancer-icon-footer"
+            alt="Freelancer.com" class="icon"></a>
+        <a href="https://github.com/aladin002dz" target="_blank" class="icon"><i class="fa fa-github"></i></a>
+        <a href="https://www.behance.net/aladin02dz1ff3" target="_blank" class="icon d-sm-block d-none"><i class="fa fa-behance-square hidden-sm hidden-xs"></i></a>
+        <a href="mailto:mahfoudh.arous@gmail.com" target="_blank" class="icon"><i class="fa fa-envelope-o hidden-sm hidden-xs"></i></a>
+        <a href="https://twitter.com/aladin02dz" target="_blank" class="icon"><i class="fa fa-twitter hidden-sm hidden-xs"></i></a>
       </div>
-	</footer>
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/script.js"></script>
-    <script type="text/javascript">
-    /*
-      // Smooth scrolling --------------------------------------------------------------------------------------------------
-      $('a[href*=#]').on('click', function(event){
-        $('html,body').animate({scrollTop:$(this.hash).offset().top-80}, 1000);
-      });
-      
-      // Copyright Year -----------------------------------------------------------------------------------------------------
-      document.getElementById('copyright').innerHTML = '&copy; ' + new Date().getFullYear() +' Mahfoudh (Aladin) Arous';
+    </div>
+      <div class="row">
+        <p id="copyright"></p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+</body>
 
-      // Icons hover effect -------------------------------------------------------------------------------------------------
-      var img = document.getElementById("fiverr-icon");
-      img.onmouseout = function () {
-          this.src = "img/fiverr-transparent-gray.png";
-        };
-      img.onmouseover = function () {
-          this.src = "img/fiverr-transparent.png";
-        };
-
-      var img = document.getElementById("freelancer-icon");
-      img.onmouseout = function () {
-          this.src = "img/freelancer-gray.png";
-        };
-      img.onmouseover = function () {
-          this.src = "img/freelancer.png";
-        };
-
-      // Infinite bounce ---------------------------------------------------------------------------------------------------
-      function testAnim() {
-        $('#scroll-down-cue').removeClass().addClass('bounce animated')
-        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-          $(this).removeClass();
-        });
-      };
-
-      $(document).ready(function(){
-        setInterval(function(){ testAnim();}, 500);
-
-      });*/
-      </script>
-    </body>
 </html>
