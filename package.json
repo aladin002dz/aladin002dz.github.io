@@ -1,0 +1,23 @@
+{
+  "name": "aladin002dz.github.io",
+  "version": "1.0.0",
+  "description": "Welcome to my personal website code.  \r visit it [here](https://aladin002dz.github.io)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aladin002dz/aladin002dz.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aladin002dz/aladin002dz.github.io/issues"
+  },
+  "homepage": "https://github.com/aladin002dz/aladin002dz.github.io#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}

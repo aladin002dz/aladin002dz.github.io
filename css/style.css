@@ -10646,7 +10646,16 @@ fieldset:disabled .btn {
   }
 }
 
-#about {
-  margin-top: 7rem;
+.social-icons {
+  font-size: calc(1.375rem + 1.5vw);
+}
+
+@media (min-width: 768px) {
+  #about {
+    margin-top: 7rem;
+  }
+  .social-icons {
+    font-size: calc(1.375rem + 0.3vw);
+  }
 }
 /*# sourceMappingURL=style.css.map */
