@@ -1,4 +1,3 @@
-const chk = document.getElementById("toggle-mode");
 const aboutCard = document.getElementById("about-card");
 const socialIcons = document.getElementById("social-icons");
 
@@ -10,6 +9,7 @@ if (darkMode === "true") {
 
 document.body.classList.remove("d-none");
 
+const chk = document.getElementById("toggle-mode");
 chk.addEventListener("change", toggleMode);
 
 function toggleMode() {
