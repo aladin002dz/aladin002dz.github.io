@@ -1,4 +1,4 @@
-const aboutCard = document.getElementById("about-card");
+/*const aboutCard = document.getElementById("about-card");
 const socialIcons = document.getElementById("social-icons");
 
 let darkMode = localStorage.getItem("darkMode") || "false";
@@ -44,3 +44,4 @@ function removeDark() {
   socialIcons.classList.add("text-dark");
   socialIcons.classList.remove("text-light");
 }
+*/
