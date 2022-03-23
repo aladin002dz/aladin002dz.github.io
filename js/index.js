@@ -1,5 +1,6 @@
-/*const aboutCard = document.getElementById("about-card");
+const aboutCard = document.getElementById("about-card");
 const socialIcons = document.getElementById("social-icons");
+const chk = document.getElementById("toggle-mode");
 
 let darkMode = localStorage.getItem("darkMode") || "false";
 if (darkMode === "true") {
@@ -9,7 +10,7 @@ if (darkMode === "true") {
 
 document.body.classList.remove("d-none");
 
-const chk = document.getElementById("toggle-mode");
+
 chk.addEventListener("change", toggleMode);
 
 function toggleMode() {
@@ -44,4 +45,4 @@ function removeDark() {
   socialIcons.classList.add("text-dark");
   socialIcons.classList.remove("text-light");
 }
-*/
+
