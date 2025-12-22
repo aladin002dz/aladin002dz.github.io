@@ -40,7 +40,7 @@ export default async function RootLayout({
     const isArabic = lang === 'ar';
 
     return (
-        <html lang={lang} dir={isArabic ? 'rtl' : 'ltr'}>
+        <html lang={lang} dir={isArabic ? 'rtl' : 'ltr'} suppressHydrationWarning>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} ${isArabic ? cairo.variable : ''} ${isArabic ? 'font-arabic' : 'font-sans'} antialiased`}
             >

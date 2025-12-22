@@ -65,7 +65,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                     <div className="relative shrink-0">
                         <div className="w-48 h-48 md:w-64 md:h-64 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/40 rotate-3 hover:rotate-0 transition-transform duration-500">
                             <Image
-                                src="https://github.com/aladin002dz.png"
+                                src="/me.png"
                                 alt="Mahfoudh Arous"
                                 width={256}
                                 height={256}
