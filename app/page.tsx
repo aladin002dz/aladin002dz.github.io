@@ -1,7 +1,10 @@
 import Image from "next/image";
-import { Github, Linkedin, Mail, Menu, Terminal, Droplet, ArrowRight, ArrowLeft } from "lucide-react";
-import Link from "next/link";
+import { Github, Linkedin, Mail, Menu, Terminal, Droplet } from "lucide-react";
 import InteractiveBackground from "./components/InteractiveBackground";
+import ProjectCard from "./components/ProjectCard";
+import NavLink from "./components/NavLink";
+import Button from "./components/Button";
+import Link from "next/link";
 
 export default function Home() {
   const projects = [
@@ -46,18 +49,18 @@ export default function Home() {
         </div>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-800">
-          <Link href="#" className="hover:text-blue-600 transition-colors">Home</Link>
-          <Link href="#about" className="hover:text-blue-600 transition-colors">About</Link>
-          <Link href="#projects" className="hover:text-blue-600 transition-colors">Projects</Link>
-          <Link href="#contact" className="hover:text-blue-600 transition-colors">Contact</Link>
+          <NavLink href="#">Home</NavLink>
+          <NavLink href="#about">About</NavLink>
+          <NavLink href="#projects">Projects</NavLink>
+          <NavLink href="#contact">Contact</NavLink>
         </nav>
 
-        <a
+        <Button
           href="mailto:mahfoudh.arous@example.com"
-          className="hidden md:block px-6 py-2 bg-gradient-to-r from-blue-400 to-orange-400 text-white rounded-full font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all"
+          className="hidden md:flex"
         >
           Contact
-        </a>
+        </Button>
 
         <button className="md:hidden p-2 text-gray-800">
           <Menu className="w-6 h-6" />
@@ -93,15 +96,16 @@ export default function Home() {
               </p>
             </div>
 
-            <a
+            <Button
               href="https://www.linkedin.com/in/mahfoudh-arous/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-orange-400 to-pink-500 text-white rounded-full font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all"
+              variant="primary"
+              className="bg-gradient-to-r from-orange-400 to-pink-500 hover:from-orange-500 hover:to-pink-600"
             >
               <Linkedin className="w-5 h-5" />
               <span>Connect on LinkedIn</span>
-            </a>
+            </Button>
           </div>
         </div>
 
@@ -113,33 +117,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
-              <div
-                key={index}
-                className="flex flex-col bg-white/40 backdrop-blur-md border border-white/40 p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
-              >
-                <div className="mb-4 p-3 bg-white/60 rounded-2xl w-fit shadow-sm group-hover:scale-110 transition-transform">
-                  {project.icon}
-                </div>
-
-                <h3 className="text-xl font-bold mb-3 text-gray-900">{project.title}</h3>
-                <p className="text-gray-700 mb-8 flex-1 leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex gap-3 mt-auto">
-                  {project.buttons.map((btn, btnIndex) => (
-                    <a
-                      key={btnIndex}
-                      href={btn.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex-1 py-2.5 px-4 rounded-xl text-center text-white text-sm font-semibold shadow-md hover:opacity-90 transition-opacity ${btn.color}`}
-                    >
-                      {btn.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
+              <ProjectCard key={index} {...project} />
             ))}
           </div>
         </section>
