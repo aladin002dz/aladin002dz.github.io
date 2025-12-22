@@ -66,7 +66,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                         href="mailto:mahfoudh.arous@example.com"
                         className=""
                     >
-                        {dict.home.nav.contact}
+                        <Mail className="w-4 h-4" />
+                        <span>{dict.home.nav.contact}</span>
                     </Button>
                 </div>
 
