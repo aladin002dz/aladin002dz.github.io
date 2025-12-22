@@ -129,6 +129,8 @@ export default function Home() {
                     <a
                       key={btnIndex}
                       href={btn.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`flex-1 py-2.5 px-4 rounded-xl text-center text-white text-sm font-semibold shadow-md hover:opacity-90 transition-opacity ${btn.color}`}
                     >
                       {btn.label}
@@ -154,10 +156,10 @@ export default function Home() {
       {/* Simple Footer */}
       <footer className="mt-12 text-center text-gray-600 text-sm pb-8">
         <div className="flex justify-center gap-6 mb-4">
-          <a href="https://github.com/aladin002dz" className="hover:text-black transition-colors">
+          <a href="https://github.com/aladin002dz" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
             <Github className="w-6 h-6" />
           </a>
-          <a href="https://www.linkedin.com/in/mahfoudh-arous/" className="hover:text-blue-600 transition-colors">
+          <a href="https://www.linkedin.com/in/mahfoudh-arous/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
             <Linkedin className="w-6 h-6" />
           </a>
         </div>
