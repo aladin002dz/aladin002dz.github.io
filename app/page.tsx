@@ -16,7 +16,7 @@ export default function Home() {
     {
       title: "ar.reactjs.org",
       description: "Open-source contribution translating the official React documentation into Arabic for the community.",
-      icon: <div className="w-8 h-8 text-blue-400 font-bold flex items-center justify-center border-2 border-blue-400 rounded-full">⚛</div>, 
+      icon: <div className="w-8 h-8 text-blue-400 font-bold flex items-center justify-center border-2 border-blue-400 rounded-full">⚛</div>,
       buttons: [
         { label: "Website", url: "https://ar.reactjs.org/", color: "bg-blue-500" },
         { label: "Source", url: "https://github.com/aladin002dz", color: "bg-orange-500" },
@@ -38,11 +38,11 @@ export default function Home() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-between bg-white/10 backdrop-blur-md border-b border-white/20">
         <div className="flex items-center gap-2">
-           <div className="text-blue-500 font-bold text-2xl flex items-center justify-center">
+          <div className="text-blue-500 font-bold text-2xl flex items-center justify-center">
             ⚛
-           </div>
+          </div>
         </div>
-        
+
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-800">
           <Link href="#" className="hover:text-blue-600 transition-colors">Home</Link>
           <Link href="#about" className="hover:text-blue-600 transition-colors">About</Link>
@@ -50,7 +50,7 @@ export default function Home() {
           <Link href="#contact" className="hover:text-blue-600 transition-colors">Contact</Link>
         </nav>
 
-        <a 
+        <a
           href="mailto:mahfoudh.arous@example.com"
           className="hidden md:block px-6 py-2 bg-gradient-to-r from-blue-400 to-orange-400 text-white rounded-full font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all"
         >
@@ -66,19 +66,19 @@ export default function Home() {
       <main className="pt-32 pb-16 px-6 max-w-6xl mx-auto">
         <div className="glass-card rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-16 bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl">
           <div className="relative shrink-0">
-             <div className="w-48 h-48 md:w-64 md:h-64 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/40 rotate-3 hover:rotate-0 transition-transform duration-500">
-              <Image 
-                src="https://github.com/aladin002dz.png" 
+            <div className="w-48 h-48 md:w-64 md:h-64 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/40 rotate-3 hover:rotate-0 transition-transform duration-500">
+              <Image
+                src="https://github.com/aladin002dz.png"
                 alt="Mahfoudh Arous"
                 width={256}
                 height={256}
                 className="w-full h-full object-cover"
                 priority
               />
-             </div>
-             <div className="absolute -top-4 -right-4 w-12 h-12 bg-white/80 backdrop-blur-md rounded-xl flex items-center justify-center shadow-lg animate-bounce">
+            </div>
+            <div className="absolute -top-4 -right-4 w-12 h-12 bg-white/80 backdrop-blur-md rounded-xl flex items-center justify-center shadow-lg animate-bounce">
               <span className="text-2xl">👋</span>
-             </div>
+            </div>
           </div>
 
           <div className="flex-1 text-center md:text-left space-y-6">
@@ -90,8 +90,8 @@ export default function Home() {
                 Senior Software Engineer & Full-stack Developer
               </p>
             </div>
-            
-            <a 
+
+            <a
               href="https://www.linkedin.com/in/mahfoudh-arous/"
               target="_blank"
               rel="noopener noreferrer"
@@ -107,26 +107,18 @@ export default function Home() {
         <section id="projects" className="mt-24">
           <div className="flex items-center justify-between mb-8 px-2">
             <h2 className="text-3xl font-bold text-gray-900">Projects</h2>
-            <div className="hidden md:flex gap-2">
-              <button className="p-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors">
-                <ArrowLeft className="w-5 h-5" />
-              </button>
-              <button className="p-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors">
-                <ArrowRight className="w-5 h-5" />
-              </button>
-            </div>
           </div>
 
-          <div className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
-              <div 
+              <div
                 key={index}
-                className="min-w-[85vw] md:min-w-[400px] snap-center flex flex-col bg-white/40 backdrop-blur-md border border-white/40 p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                className="flex flex-col bg-white/40 backdrop-blur-md border border-white/40 p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
               >
                 <div className="mb-4 p-3 bg-white/60 rounded-2xl w-fit shadow-sm group-hover:scale-110 transition-transform">
                   {project.icon}
                 </div>
-                
+
                 <h3 className="text-xl font-bold mb-3 text-gray-900">{project.title}</h3>
                 <p className="text-gray-700 mb-8 flex-1 leading-relaxed">
                   {project.description}
@@ -151,7 +143,7 @@ export default function Home() {
 
       {/* Floating Contact Button (Mobile) */}
       <div className="fixed bottom-6 right-6 md:hidden z-50">
-        <a 
+        <a
           href="mailto:mahfoudh.arous@example.com"
           className="flex items-center justify-center w-14 h-14 bg-gradient-to-tr from-pink-500 to-orange-400 rounded-full shadow-lg text-white"
         >
@@ -159,8 +151,8 @@ export default function Home() {
         </a>
       </div>
 
-       {/* Simple Footer */}
-       <footer className="mt-12 text-center text-gray-600 text-sm pb-8">
+      {/* Simple Footer */}
+      <footer className="mt-12 text-center text-gray-600 text-sm pb-8">
         <div className="flex justify-center gap-6 mb-4">
           <a href="https://github.com/aladin002dz" className="hover:text-black transition-colors">
             <Github className="w-6 h-6" />
@@ -170,7 +162,7 @@ export default function Home() {
           </a>
         </div>
         <p>© 2025 Mahfoudh Arous. All rights reserved.</p>
-       </footer>
+      </footer>
     </div>
   );
 }
