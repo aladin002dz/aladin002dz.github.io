@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Github, Linkedin, Mail, Menu, Terminal, Droplet, ArrowRight, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import InteractiveBackground from "./components/InteractiveBackground";
 
 export default function Home() {
   const projects = [
@@ -34,7 +35,8 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen font-sans choice-bg text-gray-900 pb-20">
+    <div className="min-h-screen font-sans choice-bg text-gray-900 pb-20 relative">
+      <InteractiveBackground />
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-between bg-white/10 backdrop-blur-md border-b border-white/20">
         <div className="flex items-center gap-2">
