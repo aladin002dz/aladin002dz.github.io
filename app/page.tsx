@@ -11,7 +11,7 @@ export default function Home() {
       icon: <Droplet className="w-8 h-8 text-red-500" />,
       buttons: [
         { label: "GitHub", url: "https://github.com/aladin002dz/DonateBlood", color: "bg-green-500" },
-        { label: "Demo/App", url: "https://github.com/aladin002dz/DonateBlood", color: "bg-purple-600" },
+        { label: "Demo/App", url: "https://www.soltana-dam.online/", color: "bg-purple-600" },
       ],
     },
     {
@@ -29,7 +29,7 @@ export default function Home() {
       icon: <Terminal className="w-8 h-8 text-gray-700 dark:text-gray-300" />,
       buttons: [
         { label: "GitHub", url: "https://github.com/aladin002dz/react-library-2025", color: "bg-orange-600" },
-        { label: "NPM", url: "https://github.com/aladin002dz/react-library-2025", color: "bg-pink-600" },
+        { label: "NPM", url: "https://www.npmjs.com/package/aladin-ts-rc", color: "bg-pink-600" },
       ],
     },
   ];
