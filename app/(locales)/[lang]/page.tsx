@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { Github, Linkedin, Mail, Menu, Terminal, Droplet } from "lucide-react";
+import { Github, Linkedin, Mail, Terminal, Droplet } from "lucide-react";
 import InteractiveBackground from "../../components/InteractiveBackground";
 import ProjectCard from "../../components/ProjectCard";
-import NavLink from "../../components/NavLink";
 import Button from "../../components/Button";
 import Link from "next/link";
 import { getDictionary } from "../../../lib/dictionary";
+import ThemeToggle from "../../components/ThemeToggle";
 import LanguageSwitcher from "../../components/LanguageSwitcher";
 
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
@@ -43,39 +43,19 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
     ];
 
     return (
-        <div className={`min-h-screen ${lang === 'ar' ? 'font-arabic' : 'font-sans'} choice-bg text-gray-900 pb-20 relative`}>
+        <div className={`min-h-screen ${lang === 'ar' ? 'font-arabic' : 'font-sans'} choice-bg text-gray-900 dark:text-gray-100 pb-20 relative transition-colors duration-300`}>
             <InteractiveBackground />
             {/* Header */}
             <header className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-between bg-white/10 backdrop-blur-md border-b border-white/20">
                 <div className="flex items-center gap-2">
                     <div className="text-blue-500 font-bold text-2xl flex items-center justify-center">
-                        ⚛
+                        Mahfoudh.
                     </div>
                 </div>
 
-                <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-800">
-                    <NavLink href="#">{dict.home.nav.home}</NavLink>
-                    <NavLink href="#about">{dict.home.nav.about}</NavLink>
-                    <NavLink href="#projects">{dict.home.nav.projects}</NavLink>
-                    <NavLink href="#contact">{dict.home.nav.contact}</NavLink>
-                </nav>
-
-                <div className="hidden md:flex items-center gap-4">
+                <div className="flex items-center gap-4">
                     <LanguageSwitcher currentLang={lang} />
-                    <Button
-                        href="mailto:mahfoudh.arous@example.com"
-                        className=""
-                    >
-                        <Mail className="w-4 h-4" />
-                        <span>{dict.home.nav.contact}</span>
-                    </Button>
-                </div>
-
-                <div className="md:hidden flex items-center gap-4">
-                    <LanguageSwitcher currentLang={lang} />
-                    <button className="p-2 text-gray-800">
-                        <Menu className="w-6 h-6" />
-                    </button>
+                    <ThemeToggle />
                 </div>
             </header>
 
@@ -100,10 +80,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
                     <div className={`flex-1 text-center ${lang === 'ar' ? 'md:text-right' : 'md:text-left'} space-y-6`}>
                         <div>
-                            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3 tracking-tight">
+                            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 tracking-tight">
                                 Mahfoudh Arous
                             </h1>
-                            <p className="text-xl md:text-2xl text-gray-700 font-medium opacity-90">
+                            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium opacity-90">
                                 {dict.home.role}
                             </p>
                         </div>
@@ -124,7 +104,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 {/* Projects Section */}
                 <section id="projects" className="mt-24">
                     <div className="flex items-center justify-between mb-8 px-2">
-                        <h2 className="text-3xl font-bold text-gray-900">{dict.home.projects}</h2>
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white">{dict.home.projects}</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -146,9 +126,9 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             </div>
 
             {/* Simple Footer */}
-            <footer className="mt-12 text-center text-gray-600 text-sm pb-8">
+            <footer className="mt-12 text-center text-gray-600 dark:text-gray-400 text-sm pb-8">
                 <div className="flex justify-center gap-6 mb-4">
-                    <a href="https://github.com/aladin002dz" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
+                    <a href="https://github.com/aladin002dz" target="_blank" rel="noopener noreferrer" className="hover:text-black dark:hover:text-white transition-colors">
                         <Github className="w-6 h-6" />
                     </a>
                     <a href="https://www.linkedin.com/in/mahfoudh-arous/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">

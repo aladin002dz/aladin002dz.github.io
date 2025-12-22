@@ -15,13 +15,13 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, icon, buttons }: ProjectCardProps) => {
     return (
-        <div className="flex flex-col bg-white/40 backdrop-blur-md border border-white/40 p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 group h-full">
-            <div className="mb-4 p-3 bg-white/60 rounded-2xl w-fit shadow-sm group-hover:scale-110 transition-transform">
+        <div className="flex flex-col bg-white/40 dark:bg-white/5 backdrop-blur-md border border-white/40 dark:border-white/10 p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 group h-full">
+            <div className="mb-4 p-3 bg-white/60 dark:bg-white/10 rounded-2xl w-fit shadow-sm group-hover:scale-110 transition-transform">
                 {icon}
             </div>
 
-            <h3 className="text-xl font-bold mb-3 text-gray-900">{title}</h3>
-            <p className="text-gray-700 mb-8 flex-1 leading-relaxed">
+            <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">{title}</h3>
+            <p className="text-gray-700 dark:text-gray-300 mb-8 flex-1 leading-relaxed">
                 {description}
             </p>
 
