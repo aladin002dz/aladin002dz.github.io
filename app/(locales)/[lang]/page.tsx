@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Github, Linkedin, Mail, Terminal, Droplet } from "lucide-react";
+import { Mail, Terminal, Droplet, ExternalLink, Globe, Package } from "lucide-react";
+import { Github, Linkedin } from "../../components/Icons";
 import InteractiveBackground from "../../components/InteractiveBackground";
 import ProjectCard from "../../components/ProjectCard";
 import Button from "../../components/Button";
@@ -18,8 +19,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             description: dict.projects.donateblood.description,
             icon: <Droplet className="w-8 h-8 text-red-500" />,
             buttons: [
-                { label: dict.projects.donateblood.buttons.github, url: "https://github.com/aladin002dz/DonateBlood", color: "bg-green-500" },
-                { label: dict.projects.donateblood.buttons.demo, url: "https://www.soltana-dam.online/", color: "bg-purple-600" },
+                { label: dict.projects.donateblood.buttons.github, url: "https://github.com/aladin002dz/DonateBlood", color: "bg-green-500", icon: <Github className="w-4 h-4" /> },
+                { label: dict.projects.donateblood.buttons.demo, url: "https://www.soltana-dam.online/", color: "bg-purple-600", icon: <ExternalLink className="w-4 h-4" /> },
             ],
         },
         {
@@ -27,8 +28,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             description: dict.projects.reactar.description,
             icon: <div className="w-8 h-8 text-blue-400 font-bold flex items-center justify-center border-2 border-blue-400 rounded-full">⚛</div>,
             buttons: [
-                { label: dict.projects.reactar.buttons.website, url: "https://ar.reactjs.org/", color: "bg-blue-500" },
-                { label: dict.projects.reactar.buttons.source, url: "https://github.com/aladin002dz", color: "bg-orange-500" },
+                { label: dict.projects.reactar.buttons.website, url: "https://ar.reactjs.org/", color: "bg-blue-500", icon: <Globe className="w-4 h-4" /> },
+                { label: dict.projects.reactar.buttons.source, url: "https://github.com/aladin002dz", color: "bg-orange-500", icon: <Github className="w-4 h-4" /> },
             ],
         },
         {
@@ -36,8 +37,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             description: dict.projects.reactlib.description,
             icon: <Terminal className="w-8 h-8 text-gray-700 dark:text-gray-300" />,
             buttons: [
-                { label: dict.projects.reactlib.buttons.github, url: "https://github.com/aladin002dz/react-library-2025", color: "bg-orange-600" },
-                { label: dict.projects.reactlib.buttons.npm, url: "https://www.npmjs.com/package/aladin-ts-rc", color: "bg-pink-600" },
+                { label: dict.projects.reactlib.buttons.github, url: "https://github.com/aladin002dz/react-library-2025", color: "bg-orange-600", icon: <Github className="w-4 h-4" /> },
+                { label: dict.projects.reactlib.buttons.npm, url: "https://www.npmjs.com/package/aladin-ts-rc", color: "bg-pink-600", icon: <Package className="w-4 h-4" /> },
             ],
         },
     ];

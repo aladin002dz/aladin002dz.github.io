@@ -4,6 +4,7 @@ interface ProjectButton {
     label: string;
     url: string;
     color: string;
+    icon?: ReactNode;
 }
 
 interface ProjectCardProps {
@@ -32,9 +33,10 @@ const ProjectCard = ({ title, description, icon, buttons }: ProjectCardProps) =>
                         href={btn.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex-1 py-2.5 px-4 rounded-xl text-center text-white text-sm font-semibold shadow-md hover:opacity-90 transition-opacity ${btn.color}`}
+                        className={`flex-1 py-2.5 px-4 rounded-xl text-center text-white text-sm font-semibold shadow-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2 ${btn.color}`}
                     >
-                        {btn.label}
+                        {btn.icon}
+                        <span>{btn.label}</span>
                     </a>
                 ))}
             </div>
