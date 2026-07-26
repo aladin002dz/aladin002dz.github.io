@@ -29,34 +29,8 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deployment to GitHub Pages
+## Deploy on Vercel
 
-This project is configured to automatically deploy to GitHub Pages using GitHub Actions.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### How it works
-
-The deployment pipeline is defined in `.github/workflows/deploy.yml` and consists of two main jobs:
-
-1.  **Build**:
-    *   Detetcts the package manager (pnpm).
-    *   Installs dependencies (`pnpm install`).
-    *   Builds the Next.js project as a static site (`pnpm build`).
-    *   Uploads the static build artifacts.
-
-2.  **Deploy**:
-    *   Takes the uploaded artifact.
-    *   Deploys it to the `gh-pages` environment.
-
-### Triggering a Deploy
-
-The deployment is triggered automatically whenever you push changes to the `main` branch:
-
-```bash
-git push origin main
-```
-
-You can monitor the progress in the **Actions** tab of your GitHub repository.
-
-### Configuration
-
-The project uses `output: 'export'` in `next.config.ts` to generate a static HTML export suitable for GitHub Pages. Images are unoptimized (`unoptimized: true`) since Next.js Image Optimization requires a Node.js server (like Vercel).
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
