@@ -13,10 +13,10 @@ export const en = {
     },
     projects: {
         donateblood: {
-            description: "A React Native and Firebase application to connect blood donors in Algeria, facilitating urgent donations.",
+            description: "A production React Native and Firebase platform actively used by a charitable association in Algeria to connect blood donors and facilitate urgent, life-saving donations.",
             buttons: {
                 github: "GitHub",
-                demo: "Demo/App"
+                demo: "Live Platform"
             }
         },
         reactar: {
