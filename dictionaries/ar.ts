@@ -13,10 +13,10 @@ export const ar = {
     },
     projects: {
         donateblood: {
-            description: "تطبيق React Native و Firebase لربط المتبرعين بالدم في الجزائر، وتسهيل التبرعات العاجلة.",
+            description: "منصة إلكترونية وتطبيق React Native و Firebase متاح في الخدمة الفعلية ومستخدم من طرف جمعية خيرية في الجزائر لربط المتبرعين بالدم وتسهيل التبرعات العاجلة.",
             buttons: {
                 github: "GitHub",
-                demo: "تجريبي/تطبيق"
+                demo: "المنصة الحية"
             }
         },
         reactar: {
