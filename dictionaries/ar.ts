@@ -1,14 +1,15 @@
 export const ar = {
     home: {
         role: "مهندس برمجيات أول ومطور Full-stack",
-        connect: "تواصل على LinkedIn",
+        connect: "تواصل معي على LinkedIn",
+        email: "راسلني",
         projects: "المشاريع",
-        footer: "© 2025 محفوظ عروس. جميع الحقوق محفوظة.",
+        footer: "محفوظ عروس. جميع الحقوق محفوظة.",
         nav: {
             home: "الرئيسية",
             about: "حول",
             projects: "مشاريع",
-            contact: "اتصل بنا"
+            contact: "اتصل بي"
         }
     },
     projects: {

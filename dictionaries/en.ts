@@ -2,8 +2,9 @@ export const en = {
     home: {
         role: "Senior Software Engineer & Full-stack Developer",
         connect: "Connect on LinkedIn",
+        email: "Email me",
         projects: "Projects",
-        footer: "© 2025 Mahfoudh Arous. All rights reserved.",
+        footer: "Mahfoudh Arous. All rights reserved.",
         nav: {
             home: "Home",
             about: "About",

@@ -1,12 +1,29 @@
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "../globals.css";
+import { SITE_URL, LANGUAGE_ALTERNATES, OG_IMAGE } from "../../lib/site";
+
+const geistSans = Geist({
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
+});
+
+const title = "Mahfoudh Arous | Senior Software Engineer & Full-stack Developer";
+const description =
+    "Portfolio of Mahfoudh Arous, a Senior Software Engineer & Full-stack Developer specializing in React, Next.js, and modern web technologies.";
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://aladin002dz.github.io"),
+    metadataBase: new URL(SITE_URL),
     title: {
-        default: "Mahfoudh Arous | Senior Software Engineer & Full-stack Developer",
+        default: title,
         template: "%s | Mahfoudh Arous",
     },
-    description: "Portfolio of Mahfoudh Arous, a Senior Software Engineer & Full-stack Developer specializing in React, Next.js, and modern web technologies.",
+    description,
     keywords: [
         "Software Engineer",
         "Full-stack Developer",
@@ -22,36 +39,24 @@ export const metadata: Metadata = {
     creator: "Mahfoudh Arous",
     publisher: "Mahfoudh Arous",
     alternates: {
-        canonical: "https://aladin002dz.github.io",
-        languages: {
-            en: "https://aladin002dz.github.io/en",
-            fr: "https://aladin002dz.github.io/fr",
-            ar: "https://aladin002dz.github.io/ar",
-            "x-default": "https://aladin002dz.github.io/en",
-        },
+        canonical: SITE_URL,
+        languages: LANGUAGE_ALTERNATES,
     },
     openGraph: {
-        title: "Mahfoudh Arous | Senior Software Engineer & Full-stack Developer",
-        description: "Portfolio of Mahfoudh Arous, a Senior Software Engineer & Full-stack Developer specializing in React, Next.js, and modern web technologies.",
-        url: "https://aladin002dz.github.io",
+        title,
+        description,
+        url: SITE_URL,
         siteName: "Mahfoudh Arous Portfolio",
         locale: "en_US",
         type: "website",
-        images: [
-            {
-                url: "/opengraph-image",
-                width: 1200,
-                height: 630,
-                alt: "Mahfoudh Arous - Senior Software Engineer & Full-stack Developer",
-            },
-        ],
+        images: [OG_IMAGE],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Mahfoudh Arous | Senior Software Engineer",
-        description: "Portfolio of Mahfoudh Arous, a Senior Software Engineer & Full-stack Developer specializing in React, Next.js, and modern web technologies.",
+        title,
+        description,
         creator: "@aladin002dz",
-        images: ["/opengraph-image"],
+        images: [OG_IMAGE.url],
     },
     robots: {
         index: true,
@@ -72,11 +77,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body>
+        <html lang="en" dir="ltr" suppressHydrationWarning>
+            <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
                 {children}
             </body>
         </html>
     );
 }
-
