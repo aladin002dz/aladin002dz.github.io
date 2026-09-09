@@ -25,6 +25,7 @@ pnpm lint
 | `dictionaries/` | UI copy per locale (`en`, `fr`, `ar`) |
 | `lib/site.ts` | Canonical site URL, contact address, locale list |
 | `app/robots.ts`, `app/sitemap.ts` | Generated `robots.txt` and `sitemap.xml` |
+| `app/icon.png` | Favicon (32×32) |
 | `public/CNAME` | Custom domain for GitHub Pages |
 | `public/og.png` | Social preview image (1200×630) |
 
@@ -40,6 +41,14 @@ pnpm lint
   extensionless file, which GitHub Pages serves as `application/octet-stream` —
   and social crawlers reject it. To restyle the image, regenerate it and replace
   `public/og.png`.
+- **Nothing else may build to an extensionless route.** The favicon is a static
+  `app/icon.png`, not a generated `app/icon.tsx`, so it ships as `/icon.png`.
+  After a build, `public/CNAME` should be the only extensionless file in `out/`.
+- `sitemap.ts` pins `lastModified` to a constant rather than `new Date()`, so a
+  redeploy doesn't re-stamp every URL as changed. Bump it when the page content
+  actually changes.
+- `robots.ts` deliberately omits the `host` directive: only Yandex ever read it,
+  and it takes a bare hostname rather than the full URL.
 
 ## Deployment notes
 
