@@ -13,8 +13,10 @@ export default function LanguageSwitcher({ currentLang }: { currentLang: string 
         { code: "ar", label: "Ar" }
     ];
 
+    // English is served from the bare domain, the other locales from /<lang>.
     const redirectedPathName = (locale: string) => {
-        if (!pathname) return "/";
+        if (locale === "en") return "/";
+        if (!pathname || pathname === "/") return `/${locale}`;
         const segments = pathname.split("/");
         segments[1] = locale;
         return segments.join("/");

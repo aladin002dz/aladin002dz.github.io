@@ -1,9 +1,10 @@
 export const fr = {
     home: {
         role: "Ingénieur logiciel senior & Développeur Full-stack",
-        connect: "Se connecter sur LinkedIn",
+        connect: "Me contacter sur LinkedIn",
+        email: "M'écrire",
         projects: "Projets",
-        footer: "© 2025 Mahfoudh Arous. Tous droits réservés.",
+        footer: "Mahfoudh Arous. Tous droits réservés.",
         nav: {
             home: "Accueil",
             about: "À propos",

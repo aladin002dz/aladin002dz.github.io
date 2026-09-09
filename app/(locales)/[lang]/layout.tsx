@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Cairo } from "next/font/google";
 import "../../globals.css";
+import {
+    SITE_URL,
+    LOCALES,
+    LANGUAGE_ALTERNATES,
+    OG_IMAGE,
+    localeUrl,
+} from "../../../lib/site";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -45,7 +52,10 @@ export async function generateMetadata({
     const title = titles[lang] || titles.en;
     const description = descriptions[lang] || descriptions.en;
     const ogLocale = ogLocales[lang] || "en_US";
-    const canonicalUrl = `https://aladin002dz.github.io/${lang}`;
+
+    // English is served from the bare domain, so /en points its canonical there
+    // instead of competing with it.
+    const canonicalUrl = localeUrl(lang);
 
     return {
         title,
@@ -65,15 +75,10 @@ export async function generateMetadata({
         authors: [{ name: "Mahfoudh Arous", url: "https://github.com/aladin002dz" }],
         creator: "Mahfoudh Arous",
         publisher: "Mahfoudh Arous",
-        metadataBase: new URL("https://aladin002dz.github.io"),
+        metadataBase: new URL(SITE_URL),
         alternates: {
             canonical: canonicalUrl,
-            languages: {
-                en: "https://aladin002dz.github.io/en",
-                fr: "https://aladin002dz.github.io/fr",
-                ar: "https://aladin002dz.github.io/ar",
-                "x-default": "https://aladin002dz.github.io/en",
-            },
+            languages: LANGUAGE_ALTERNATES,
         },
         openGraph: {
             title,
@@ -82,20 +87,13 @@ export async function generateMetadata({
             siteName: "Mahfoudh Arous Portfolio",
             locale: ogLocale,
             type: "website",
-            images: [
-                {
-                    url: "/opengraph-image",
-                    width: 1200,
-                    height: 630,
-                    alt: "Mahfoudh Arous - Senior Software Engineer",
-                },
-            ],
+            images: [OG_IMAGE],
         },
         twitter: {
             card: "summary_large_image",
             title,
             description,
-            images: ["/opengraph-image"],
+            images: [OG_IMAGE.url],
             creator: "@aladin002dz",
         },
         robots: {
@@ -113,10 +111,10 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-    return [{ lang: "en" }, { lang: "fr" }, { lang: "ar" }];
+    return LOCALES.map((lang) => ({ lang }));
 }
 
-export default async function RootLayout({
+export default async function LocaleLayout({
     children,
     params,
 }: {
@@ -124,12 +122,12 @@ export default async function RootLayout({
     params: Promise<{ lang: string }>;
 }) {
     const { lang } = await params;
-    const isArabic = lang === 'ar';
+    const isArabic = lang === "ar";
 
     return (
-        <html lang={lang} dir={isArabic ? 'rtl' : 'ltr'} suppressHydrationWarning>
+        <html lang={lang} dir={isArabic ? "rtl" : "ltr"} suppressHydrationWarning>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} ${isArabic ? cairo.variable : ''} ${isArabic ? 'font-arabic' : 'font-sans'} antialiased`}
+                className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} ${isArabic ? "font-arabic" : "font-sans"} antialiased`}
             >
                 {children}
             </body>
