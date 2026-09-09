@@ -34,13 +34,13 @@ export async function generateMetadata({
     const titles: Record<string, string> = {
         en: "Mahfoudh Arous | Senior Software Engineer & Full-stack Developer",
         fr: "Mahfoudh Arous | Ingénieur Logiciel Senior & Développeur Full-stack",
-        ar: "محفوظ عروس | مهندس برمجيات قدير ومطور شامل",
+        ar: "محفوظ عروس | مهندس برمجيات سينيور ومطور شامل",
     };
 
     const descriptions: Record<string, string> = {
         en: "Portfolio of Mahfoudh Arous, a Senior Software Engineer & Full-stack Developer specializing in React, Next.js, and modern web technologies.",
         fr: "Portfolio de Mahfoudh Arous, Ingénieur Logiciel Senior & Développeur Full-stack spécialisé en React, Next.js et technologies web modernes.",
-        ar: "الموقع الشخصي لمحفوظ عروس، مهندس برمجيات قدير ومطور شامل متخصص في React و Next.js وتقنيات الويب الحديثة.",
+        ar: "الموقع الشخصي لمحفوظ عروس، مهندس برمجيات سينيور ومطور شامل متخصص في React و Next.js وتقنيات الويب الحديثة.",
     };
 
     const ogLocales: Record<string, string> = {
