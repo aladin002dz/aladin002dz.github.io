@@ -1,6 +1,6 @@
 export const SITE_URL = "https://mahfoudh.dev";
 
-export const CONTACT_EMAIL = "mahfoudh.arous@gmail.com";
+export const CONTACT_EMAIL = "hello@mahfoudh.dev";
 
 export const LOCALES = ["en", "fr", "ar"] as const;
 export type Locale = (typeof LOCALES)[number];
