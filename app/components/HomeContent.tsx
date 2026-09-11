@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Mail, Terminal, Droplet, ExternalLink, Globe, Package } from "lucide-react";
-import { Github, Linkedin } from "./Icons";
+import { Github, Linkedin, Facebook, Twitter, Bluesky, Youtube } from "./Icons";
 import InteractiveBackground from "./InteractiveBackground";
 import ProjectCard from "./ProjectCard";
 import Button from "./Button";
@@ -139,12 +139,29 @@ export default async function HomeContent({ lang }: { lang: string }) {
 
             {/* Simple Footer */}
             <footer className="mt-12 text-center text-gray-600 dark:text-gray-400 text-sm pb-8">
-                <div className="flex justify-center gap-6 mb-4">
+                <div className="flex flex-wrap justify-center gap-6 mb-4">
                     <a href="https://github.com/aladin002dz" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-black dark:hover:text-white transition-colors">
                         <Github className="w-6 h-6" />
                     </a>
                     <a href="https://www.linkedin.com/in/mahfoudh-arous/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-blue-600 transition-colors">
                         <Linkedin className="w-6 h-6" />
+                    </a>
+                    <a href="https://www.facebook.com/mahfoudh.arous" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-blue-600 transition-colors">
+                        <Facebook className="w-6 h-6" />
+                    </a>
+                    <a href="https://www.youtube.com/@mahfoudh_arous" target="_blank" rel="noopener noreferrer" aria-label="YouTube (French)" className="relative hover:text-red-600 transition-colors">
+                        <Youtube className="w-6 h-6" />
+                        <span className="absolute -bottom-1.5 -right-1.5 px-1 rounded bg-red-600 text-white text-[9px] leading-tight font-bold">FR</span>
+                    </a>
+                    <a href="https://www.youtube.com/@%D9%88%D8%B1%D8%B4%D8%A9_%D8%A7%D9%84%D8%A8%D8%B1%D9%85%D8%AC%D8%A9_%D9%85%D8%B9_%D9%85%D8%AD%D9%81%D9%88%D8%B8" target="_blank" rel="noopener noreferrer" aria-label="YouTube (Arabic)" className="relative hover:text-red-600 transition-colors">
+                        <Youtube className="w-6 h-6" />
+                        <span className="absolute -bottom-1.5 -right-1.5 px-1 rounded bg-red-600 text-white text-[9px] leading-tight font-bold">AR</span>
+                    </a>
+                    <a href="https://x.com/mahfoudh_arous" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-black dark:hover:text-white transition-colors">
+                        <Twitter className="w-6 h-6" />
+                    </a>
+                    <a href="https://bsky.app/profile/mahfoudharous.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky" className="hover:text-sky-500 transition-colors">
+                        <Bluesky className="w-6 h-6" />
                     </a>
                     <a href={`mailto:${CONTACT_EMAIL}`} aria-label={dict.home.email} className="hover:text-pink-600 transition-colors">
                         <Mail className="w-6 h-6" />
