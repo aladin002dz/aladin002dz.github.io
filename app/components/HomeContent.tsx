@@ -135,11 +135,11 @@ export default async function HomeContent({ lang }: { lang: string }) {
                 <nav dir="ltr" className="flex flex-wrap gap-5">
                     {socials.map(({ label, href, Icon }) => (
                         <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label}
-                            className="text-muted transition-colors duration-150 hover:text-accent">
+                            className="-m-2.5 p-2.5 text-muted transition-colors duration-150 hover:text-accent">
                             <Icon className="h-5 w-5" />
                         </a>
                     ))}
-                    <a href={`mailto:${CONTACT_EMAIL}`} aria-label={dict.home.email} className="text-muted transition-colors duration-150 hover:text-accent">
+                    <a href={`mailto:${CONTACT_EMAIL}`} aria-label={dict.home.email} className="-m-2.5 p-2.5 text-muted transition-colors duration-150 hover:text-accent">
                         <Mail className="h-5 w-5" />
                     </a>
                 </nav>
