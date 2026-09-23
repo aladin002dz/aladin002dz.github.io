@@ -1,85 +1,80 @@
 @import "tailwindcss";
 
+/* Theme is toggled with the .dark class on <html> (see ThemeToggle.tsx). */
 @variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --paper-0: oklch(0.988 0.005 85); --paper-1: oklch(0.968 0.008 85);
+  --paper-2: oklch(0.935 0.010 85); --paper-3: oklch(0.885 0.012 85);
+  --ink-0: oklch(0.155 0.008 80); --ink-1: oklch(0.205 0.010 80);
+  --ink-2: oklch(0.360 0.010 80); --ink-3: oklch(0.500 0.010 80); --ink-4: oklch(0.680 0.008 80);
+  --green-100: oklch(0.950 0.035 160); --green-300: oklch(0.780 0.100 160);
+  --green-500: oklch(0.520 0.110 160); --green-600: oklch(0.445 0.100 160); --green-700: oklch(0.360 0.080 160);
+  --clay-100: oklch(0.950 0.030 40); --clay-300: oklch(0.780 0.100 40);
+  --clay-500: oklch(0.520 0.110 40); --clay-600: oklch(0.445 0.100 40);
 
+  --bg: var(--paper-0); --surface: #fff; --sunken: var(--paper-1);
+  --inverse: var(--ink-1); --on-inverse: var(--paper-0);
+  --text: var(--ink-1); --muted: var(--ink-2); --subtle: var(--ink-3);
+  --line: var(--paper-3); --line-subtle: var(--paper-2); --line-strong: var(--ink-4);
+  --accent: var(--green-500); --accent-hover: var(--green-600); --accent-soft: var(--green-100);
+  --accent-ink: var(--green-700); --on-accent: var(--paper-0);
+  --clay: var(--clay-500); --clay-soft: var(--clay-100);
+  --ring: var(--green-300);
+  --shadow-card: 0 1px 2px oklch(0.2 0.01 80 / 0.06), 0 8px 24px -12px oklch(0.2 0.01 80 / 0.18);
+}
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --bg: var(--ink-0); --surface: var(--ink-1); --sunken: oklch(0.185 0.009 80);
+  --inverse: var(--paper-0); --on-inverse: var(--ink-1);
+  --text: var(--paper-1); --muted: oklch(0.800 0.008 85); --subtle: oklch(0.680 0.008 85);
+  --line: oklch(0.300 0.010 80); --line-subtle: oklch(0.250 0.010 80); --line-strong: oklch(0.480 0.010 80);
+  --accent: var(--green-300); --accent-hover: oklch(0.840 0.090 160); --accent-soft: oklch(0.280 0.050 160);
+  --accent-ink: var(--green-300); --on-accent: var(--ink-0);
+  --clay: var(--clay-300); --clay-soft: oklch(0.280 0.050 40);
+  --ring: var(--green-500);
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-arabic: var(--font-cairo), var(--font-geist-sans);
+  --font-sans: var(--font-plex), var(--font-plex-ar), system-ui, sans-serif;
+  --font-arabic: var(--font-plex-ar), var(--font-plex), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-sunken: var(--sunken);
+  --color-inverse: var(--inverse);
+  --color-on-inverse: var(--on-inverse);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-line: var(--line);
+  --color-line-subtle: var(--line-subtle);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+  --color-on-accent: var(--on-accent);
+  --color-clay: var(--clay);
+  --color-clay-soft: var(--clay-soft);
+
+  --radius-tag: 3px;
+  --radius-btn: 6px;
+  --radius-panel: 10px;
+  --radius-card: 16px;
+  --shadow-card: var(--shadow-card);
 }
 
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
+html { background: var(--bg); color-scheme: light; }
+html.dark { color-scheme: dark; }
+body { min-height: 100vh; background: var(--bg); color: var(--text); line-height: 1.6; }
+[dir="rtl"] body { line-height: 1.8; }
+::selection { background: var(--accent-soft); color: var(--text); }
+:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--ring); border-radius: 3px; }
 
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-
-html {
-  background-color: var(--background);
-  transition: background-color 0.3s;
-}
-
-body {
-  min-height: 100vh;
-  color: var(--foreground);
-  background-color: transparent;
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  position: relative;
-  transition: color 0.3s;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-  background: linear-gradient(-45deg, #a5f3fc, #c4b5fd, #fdba74, #fb923c);
-  background-size: 400% 400%;
-  animation: gradient-animation 10s ease infinite;
-  opacity: 1;
-  transition: opacity 0.5s;
-}
-
-.dark body::before {
-  opacity: 0.5;
-  background: linear-gradient(-45deg, #312e81, #4c1d95, #6d28d9, #7c3aed);
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: radial-gradient(circle 800px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.4), transparent 40%);
-  mix-blend-mode: overlay;
-  pointer-events: none;
-}
-
-.dark body::after {
-  background: radial-gradient(circle 800px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.1), transparent 40%);
+.hairline-grid {
+  background:
+    linear-gradient(var(--line-subtle) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, var(--line-subtle) 1px, transparent 1px) 0 0 / 32px 32px,
+    var(--bg);
 }

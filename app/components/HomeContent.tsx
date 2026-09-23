@@ -1,13 +1,16 @@
 import Image from "next/image";
-import { Mail, Terminal, Droplet, ExternalLink, Globe, Package } from "lucide-react";
-import { Github, Linkedin } from "./Icons";
-import InteractiveBackground from "./InteractiveBackground";
+import { Mail, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Facebook, Twitter, Bluesky, Youtube } from "./Icons";
 import ProjectCard from "./ProjectCard";
 import Button from "./Button";
+import SectionLabel from "./SectionLabel";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { getDictionary } from "../../lib/dictionary";
 import { CONTACT_EMAIL } from "../../lib/site";
+
+const YT_FR = "https://www.youtube.com/@mahfoudh_arous";
+const YT_AR = "https://www.youtube.com/@%D9%88%D8%B1%D8%B4%D8%A9_%D8%A7%D9%84%D8%A8%D8%B1%D9%85%D8%AC%D8%A9_%D9%85%D8%B9_%D9%85%D8%AD%D9%81%D9%88%D8%B8";
 
 export default async function HomeContent({ lang }: { lang: string }) {
     const dict = await getDictionary(lang);
@@ -16,141 +19,134 @@ export default async function HomeContent({ lang }: { lang: string }) {
     const projects = [
         {
             title: "DonateBlood",
+            eyebrow: dict.projects.donateblood.eyebrow,
             description: dict.projects.donateblood.description,
-            icon: <Droplet className="w-8 h-8 text-red-500" />,
-            buttons: [
-                { label: dict.projects.donateblood.buttons.github, url: "https://github.com/aladin002dz/DonateBlood", color: "bg-green-500", icon: <Github className="w-4 h-4" /> },
-                { label: dict.projects.donateblood.buttons.demo, url: "https://www.soltana-dam.online/", color: "bg-purple-600", icon: <ExternalLink className="w-4 h-4" /> },
+            tags: ["react-native", "firebase"],
+            links: [
+                { label: dict.projects.donateblood.buttons.github, url: "https://github.com/aladin002dz/DonateBlood" },
+                { label: dict.projects.donateblood.buttons.demo, url: "https://www.soltana-dam.online/" },
             ],
         },
         {
             title: "ar.react.dev",
+            eyebrow: dict.projects.reactar.eyebrow,
             description: dict.projects.reactar.description,
-            icon: <div className="w-8 h-8 text-blue-400 font-bold flex items-center justify-center border-2 border-blue-400 rounded-full">⚛</div>,
-            buttons: [
-                { label: dict.projects.reactar.buttons.website, url: "https://ar.react.dev/", color: "bg-blue-500", icon: <Globe className="w-4 h-4" /> },
-                { label: dict.projects.reactar.buttons.source, url: "https://github.com/reactjs/ar.react.dev", color: "bg-orange-500", icon: <Github className="w-4 h-4" /> },
+            tags: ["react", "i18n"],
+            links: [
+                { label: dict.projects.reactar.buttons.website, url: "https://ar.react.dev/" },
+                { label: dict.projects.reactar.buttons.source, url: "https://github.com/reactjs/ar.react.dev" },
             ],
         },
         {
             title: "react-library-2025",
+            eyebrow: dict.projects.reactlib.eyebrow,
             description: dict.projects.reactlib.description,
-            icon: <Terminal className="w-8 h-8 text-gray-700 dark:text-gray-300" />,
-            buttons: [
-                { label: dict.projects.reactlib.buttons.github, url: "https://github.com/aladin002dz/react-library-2025", color: "bg-orange-600", icon: <Github className="w-4 h-4" /> },
-                { label: dict.projects.reactlib.buttons.npm, url: "https://www.npmjs.com/package/aladin-ts-rc", color: "bg-pink-600", icon: <Package className="w-4 h-4" /> },
+            tags: ["typescript", "cli", "npm"],
+            links: [
+                { label: dict.projects.reactlib.buttons.github, url: "https://github.com/aladin002dz/react-library-2025" },
+                { label: dict.projects.reactlib.buttons.npm, url: "https://www.npmjs.com/package/aladin-ts-rc" },
             ],
         },
     ];
 
-    return (
-        <div className={`min-h-screen ${isArabic ? "font-arabic" : "font-sans"} choice-bg text-gray-900 dark:text-gray-100 pb-20 relative transition-colors duration-300`}>
-            <InteractiveBackground />
-            {/* Header */}
-            <header className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-between bg-white/10 backdrop-blur-md border-b border-white/20">
-                <div className="flex items-center gap-2">
-                    <div dir="ltr" className="text-blue-500 font-bold text-2xl flex items-center justify-center">
-                        Mahfoudh.
-                    </div>
-                </div>
+    const socials = [
+        { label: "GitHub", href: "https://github.com/aladin002dz", Icon: Github },
+        { label: "LinkedIn", href: "https://www.linkedin.com/in/mahfoudh-arous/", Icon: Linkedin },
+        { label: "YouTube FR", href: YT_FR, Icon: Youtube },
+        { label: "YouTube AR", href: YT_AR, Icon: Youtube },
+        { label: "Facebook", href: "https://www.facebook.com/mahfoudh.arous", Icon: Facebook },
+        { label: "X", href: "https://x.com/mahfoudh_arous", Icon: Twitter },
+        { label: "Bluesky", href: "https://bsky.app/profile/mahfoudharous.bsky.social", Icon: Bluesky },
+    ];
 
-                <div className="flex items-center gap-4">
-                    <LanguageSwitcher currentLang={lang} />
-                    <ThemeToggle />
+    return (
+        <div className={`min-h-screen bg-bg text-ink ${isArabic ? "font-arabic" : "font-sans"}`}>
+            <header className="sticky top-0 z-50 border-b border-line bg-bg/85 backdrop-blur-md">
+                <div className="mx-auto flex max-w-[1120px] items-center gap-4 px-6 py-3.5">
+                    <a href={isArabic ? "/ar" : lang === "fr" ? "/fr" : "/"} dir="ltr" className="font-sans text-[22px] font-semibold leading-none tracking-[-0.03em] text-ink">
+                        Mahfoudh<span className="text-accent">.</span>
+                    </a>
+                    <div className="ms-auto flex items-center gap-2.5">
+                        <LanguageSwitcher currentLang={lang} />
+                        <ThemeToggle />
+                    </div>
                 </div>
             </header>
 
-            {/* Hero Section */}
-            <main className="pt-32 pb-16 px-6 max-w-6xl mx-auto">
-                <div className="glass-card rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-16 bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl">
-                    <div className="relative shrink-0">
-                        <div className="w-48 h-48 md:w-64 md:h-64 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/40 rotate-3 hover:rotate-0 transition-transform duration-500">
-                            <Image
-                                src="/me.webp"
-                                alt="Mahfoudh Arous"
-                                width={460}
-                                height={460}
-                                className="w-full h-full object-cover"
-                                priority
-                            />
-                        </div>
-                        <div className={`absolute -top-4 ${isArabic ? "-left-4" : "-right-4"} w-12 h-12 bg-white/80 backdrop-blur-md rounded-xl flex items-center justify-center shadow-lg animate-bounce`}>
-                            <span className="text-2xl" role="img" aria-label="wave">👋</span>
-                        </div>
-                    </div>
-
-                    <div className={`flex-1 text-center ${isArabic ? "md:text-right" : "md:text-left"} space-y-6`}>
-                        <div>
-                            <h1 dir="ltr" className={`text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 tracking-tight text-center ${isArabic ? "md:text-right" : "md:text-left"}`}>
-                                Mahfoudh Arous
+            <main>
+                <section className="hairline-grid border-b border-line">
+                    <div className="mx-auto grid max-w-[1120px] items-center gap-10 px-6 py-16 md:grid-cols-[1.4fr_1fr] md:gap-16 md:py-28">
+                        <div className="flex flex-col gap-6">
+                            <SectionLabel index="00">{dict.home.hello}</SectionLabel>
+                            <h1 className={`text-[clamp(44px,7vw,80px)] font-semibold leading-[1.05] text-balance ${isArabic ? "" : "tracking-[-0.035em]"}`}>
+                                {dict.home.name}<span className="text-accent">.</span>
                             </h1>
-                            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium opacity-90">
-                                {dict.home.role}
-                            </p>
+                            <p className="max-w-[30ch] text-[clamp(20px,2.4vw,26px)] leading-snug text-muted text-pretty">{dict.home.role}</p>
+                            <div className="flex flex-wrap gap-3">
+                                <Button href="https://www.linkedin.com/in/mahfoudh-arous/" target="_blank" rel="noopener noreferrer" size="lg">
+                                    <Linkedin className="h-[18px] w-[18px]" />
+                                    <span>{dict.home.connect}</span>
+                                </Button>
+                                <Button href={`mailto:${CONTACT_EMAIL}`} variant="secondary" size="lg">
+                                    <Mail className="h-[18px] w-[18px]" />
+                                    <span>{dict.home.email}</span>
+                                </Button>
+                            </div>
                         </div>
-
-                        <div className={`flex flex-wrap gap-3 justify-center ${isArabic ? "md:justify-end" : "md:justify-start"}`}>
-                            <Button
-                                href="https://www.linkedin.com/in/mahfoudh-arous/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                variant="primary"
-                                className="bg-gradient-to-r from-orange-400 to-pink-500 hover:from-orange-500 hover:to-pink-600"
-                            >
-                                <Linkedin className="w-5 h-5" />
-                                <span>{dict.home.connect}</span>
-                            </Button>
-
-                            <a
-                                href={`mailto:${CONTACT_EMAIL}`}
-                                className="inline-flex items-center justify-center gap-2 px-6 py-2 rounded-full font-medium transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 bg-white/30 dark:bg-white/10 backdrop-blur-md border border-white/40 dark:border-white/20 text-gray-800 dark:text-gray-100 hover:bg-white/50 dark:hover:bg-white/20"
-                            >
-                                <Mail className="w-5 h-5" />
-                                <span>{dict.home.email}</span>
-                            </a>
+                        <div className="justify-self-center w-full max-w-[380px] aspect-[4/5] overflow-hidden rounded-card border border-line bg-sunken">
+                            <Image src="/me.webp" alt="Mahfoudh Arous" width={460} height={575} className="h-full w-full object-cover" priority />
                         </div>
                     </div>
-                </div>
+                </section>
 
-                {/* Projects Section */}
-                <section id="projects" className="mt-24">
-                    <div className="flex items-center justify-between mb-8 px-2">
-                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white">{dict.home.projects}</h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <section id="projects" className="mx-auto flex max-w-[1120px] flex-col gap-6 px-6 py-16 md:py-22">
+                    <SectionLabel index="01">{dict.home.projects}</SectionLabel>
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                         {projects.map((project) => (
                             <ProjectCard key={project.title} {...project} />
                         ))}
                     </div>
                 </section>
+
+                <section id="youtube" className="border-y border-line bg-sunken">
+                    <div className="mx-auto grid max-w-[1120px] items-center gap-6 px-6 py-14 md:grid-cols-2 md:py-18">
+                        <div className="flex flex-col gap-4">
+                            <SectionLabel index="02" tone="clay">YouTube</SectionLabel>
+                            <p className="text-[clamp(22px,2.6vw,28px)] font-semibold leading-tight text-pretty">{dict.home.teach}</p>
+                        </div>
+                        <div className="grid gap-4 sm:grid-cols-2">
+                            {[
+                                { code: "FR", label: dict.home.frChannel, href: YT_FR },
+                                { code: "AR", label: dict.home.arChannel, href: YT_AR },
+                            ].map((c) => (
+                                <a key={c.code} href={c.href} target="_blank" rel="noopener noreferrer"
+                                    className="flex items-center gap-3.5 rounded-panel border border-line bg-surface px-5 py-4 text-ink transition-colors duration-150 hover:border-clay">
+                                    <span className="grid h-10 w-10 place-items-center rounded-btn bg-clay-soft font-mono text-[13px] font-semibold text-clay">{c.code}</span>
+                                    <span className="flex-1 font-medium">{c.label}</span>
+                                    <ArrowUpRight className="h-4 w-4 text-clay rtl:-scale-x-100" />
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </section>
             </main>
 
-            {/* Floating Contact Button (Mobile) */}
-            <div className={`fixed bottom-6 ${isArabic ? "left-6" : "right-6"} md:hidden z-50`}>
-                <a
-                    href={`mailto:${CONTACT_EMAIL}`}
-                    aria-label={dict.home.email}
-                    className="flex items-center justify-center w-14 h-14 bg-gradient-to-tr from-pink-500 to-orange-400 rounded-full shadow-lg text-white"
-                >
-                    <Mail className="w-6 h-6" />
-                </a>
-            </div>
-
-            {/* Simple Footer */}
-            <footer className="mt-12 text-center text-gray-600 dark:text-gray-400 text-sm pb-8">
-                <div className="flex justify-center gap-6 mb-4">
-                    <a href="https://github.com/aladin002dz" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-black dark:hover:text-white transition-colors">
-                        <Github className="w-6 h-6" />
+            <footer className="mx-auto flex max-w-[1120px] flex-wrap items-center justify-between gap-x-8 gap-y-5 px-6 py-8">
+                <nav dir="ltr" className="flex flex-wrap gap-5">
+                    {socials.map(({ label, href, Icon }) => (
+                        <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label}
+                            className="text-muted transition-colors duration-150 hover:text-accent">
+                            <Icon className="h-5 w-5" />
+                        </a>
+                    ))}
+                    <a href={`mailto:${CONTACT_EMAIL}`} aria-label={dict.home.email} className="text-muted transition-colors duration-150 hover:text-accent">
+                        <Mail className="h-5 w-5" />
                     </a>
-                    <a href="https://www.linkedin.com/in/mahfoudh-arous/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-blue-600 transition-colors">
-                        <Linkedin className="w-6 h-6" />
-                    </a>
-                    <a href={`mailto:${CONTACT_EMAIL}`} aria-label={dict.home.email} className="hover:text-pink-600 transition-colors">
-                        <Mail className="w-6 h-6" />
-                    </a>
-                </div>
-                <p>© {new Date().getFullYear()} {dict.home.footer}</p>
+                </nav>
+                <p className="flex gap-1.5 font-mono text-xs text-subtle">
+                    <bdi dir="ltr">© {new Date().getFullYear()}</bdi>
+                    <span>{dict.home.footer}</span>
+                </p>
             </footer>
         </div>
     );

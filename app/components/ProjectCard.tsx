@@ -1,47 +1,37 @@
-import { ReactNode } from "react";
+import { ArrowUpRight } from "lucide-react";
 
-interface ProjectButton {
-    label: string;
-    url: string;
-    color: string;
-    icon?: ReactNode;
-}
+interface ProjectLink { label: string; url: string }
 
 interface ProjectCardProps {
     title: string;
+    eyebrow?: string;
     description: string;
-    icon: ReactNode;
-    buttons: ProjectButton[];
+    tags?: string[];
+    links: ProjectLink[];
 }
 
-const ProjectCard = ({ title, description, icon, buttons }: ProjectCardProps) => {
+export default function ProjectCard({ title, eyebrow, description, tags = [], links }: ProjectCardProps) {
     return (
-        <div className="flex flex-col bg-white/40 dark:bg-white/5 backdrop-blur-md border border-white/40 dark:border-white/10 p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 group h-full">
-            <div className="mb-4 p-3 bg-white/60 dark:bg-white/10 rounded-2xl w-fit shadow-sm group-hover:scale-110 transition-transform">
-                {icon}
-            </div>
-
-            <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">{title}</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-8 flex-1 leading-relaxed">
-                {description}
-            </p>
-
-            <div className="flex gap-3 mt-auto">
-                {buttons.map((btn, index) => (
-                    <a
-                        key={index}
-                        href={btn.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`flex-1 py-2.5 px-4 rounded-xl text-center text-white text-sm font-semibold shadow-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2 ${btn.color}`}
-                    >
-                        {btn.icon}
-                        <span>{btn.label}</span>
+        <article className="flex h-full flex-col gap-3 rounded-card border border-line bg-surface p-6 transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-0.5 hover:border-line-strong hover:shadow-card">
+            {eyebrow && <div className="font-mono text-xs text-subtle rtl:font-arabic">{eyebrow}</div>}
+            <h3 dir="ltr" className="text-start font-sans text-[22px] font-semibold leading-tight tracking-[-0.01em]">{title}</h3>
+            <p className="text-[15px] leading-relaxed text-muted text-pretty">{description}</p>
+            {tags.length > 0 && (
+                <div dir="ltr" className="flex flex-wrap gap-1.5 pt-1">
+                    {tags.map((t) => (
+                        <span key={t} className="inline-flex h-6 items-center rounded-tag bg-accent-soft px-2 font-mono text-xs font-medium text-accent-ink">{t}</span>
+                    ))}
+                </div>
+            )}
+            <div className="mt-auto flex gap-5 border-t border-line-subtle pt-3">
+                {links.map((l) => (
+                    <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-sm font-medium text-ink transition-colors duration-150 hover:text-accent">
+                        {l.label}
+                        <ArrowUpRight className="h-3.5 w-3.5 text-subtle rtl:-scale-x-100" />
                     </a>
                 ))}
             </div>
-        </div>
+        </article>
     );
-};
-
-export default ProjectCard;
+}

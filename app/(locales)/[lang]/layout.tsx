@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Cairo } from "next/font/google";
 import "../../globals.css";
+import InlineScript from "../../components/InlineScript";
+import { fontVariables, themeInitScript } from "../../fonts";
 import {
     SITE_URL,
     LOCALES,
@@ -8,21 +9,6 @@ import {
     OG_IMAGE,
     localeUrl,
 } from "../../../lib/site";
-
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-});
-
-const cairo = Cairo({
-    variable: "--font-cairo",
-    subsets: ["arabic"],
-});
 
 export async function generateMetadata({
     params,
@@ -126,8 +112,11 @@ export default async function LocaleLayout({
 
     return (
         <html lang={lang} dir={isArabic ? "rtl" : "ltr"} suppressHydrationWarning>
+            <head>
+                <InlineScript html={themeInitScript} />
+            </head>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} ${isArabic ? "font-arabic" : "font-sans"} antialiased`}
+                className={`${fontVariables} ${isArabic ? "font-arabic" : "font-sans"} antialiased`}
             >
                 {children}
             </body>

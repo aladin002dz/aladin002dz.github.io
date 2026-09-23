@@ -3,15 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+const languages = [
+    { code: "en", label: "EN" },
+    { code: "fr", label: "FR" },
+    { code: "ar", label: "ع" },
+];
+
 export default function LanguageSwitcher({ currentLang }: { currentLang: string }) {
     const pathname = usePathname();
-
-    // Minimal language maps
-    const languages = [
-        { code: "en", label: "En" },
-        { code: "fr", label: "Fr" },
-        { code: "ar", label: "Ar" }
-    ];
 
     // English is served from the bare domain, the other locales from /<lang>.
     const redirectedPathName = (locale: string) => {
@@ -23,19 +22,16 @@ export default function LanguageSwitcher({ currentLang }: { currentLang: string 
     };
 
     return (
-        <div className="flex gap-2 bg-white/20 backdrop-blur-sm rounded-lg p-1 border border-white/30">
-            {languages.map((lang) => (
-                <Link
-                    key={lang.code}
-                    href={redirectedPathName(lang.code)}
-                    className={`px-2 py-1 rounded-md text-sm font-medium transition-colors ${currentLang === lang.code
-                            ? "bg-white text-gray-900 shadow-sm"
-                            : "text-gray-700 hover:bg-white/50"
-                        }`}
-                >
-                    {lang.label}
-                </Link>
-            ))}
+        <div dir="ltr" className="inline-flex gap-0.5 rounded-btn border border-line p-0.5">
+            {languages.map((lang) => {
+                const on = currentLang === lang.code;
+                return (
+                    <Link key={lang.code} href={redirectedPathName(lang.code)} aria-current={on ? "true" : undefined}
+                        className={`grid h-7 min-w-9 place-items-center rounded px-2 text-xs font-medium transition-colors duration-150 ${lang.code === "ar" ? "font-arabic text-[13px]" : "font-mono"} ${on ? "bg-inverse text-on-inverse" : "text-muted hover:bg-sunken"}`}>
+                        {lang.label}
+                    </Link>
+                );
+            })}
         </div>
     );
 }
