@@ -37,7 +37,7 @@
 @theme inline {
   --font-sans: var(--font-plex), var(--font-plex-ar), system-ui, sans-serif;
   --font-arabic: var(--font-plex-ar), var(--font-plex), system-ui, sans-serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-mono: var(--font-plex-mono), ui-monospace, Menlo, monospace;
 
   --color-bg: var(--bg);
   --color-surface: var(--surface);
