@@ -132,18 +132,21 @@ export default async function HomeContent({ lang }: { lang: string }) {
             </main>
 
             <footer className="mx-auto flex max-w-[1120px] flex-wrap items-center justify-between gap-x-8 gap-y-5 px-6 py-8">
-                <nav dir="ltr" className="flex flex-wrap gap-5">
+                <nav dir="ltr" className="flex flex-wrap gap-x-6 gap-y-3">
                     {socials.map(({ label, href, Icon }) => (
-                        <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label}
-                            className="-m-2.5 p-2.5 text-muted transition-colors duration-150 hover:text-accent">
-                            <Icon className="h-5 w-5" />
+                        <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
+                            className="inline-flex items-center gap-2 font-sans text-sm font-medium leading-none text-muted transition-colors duration-150 hover:text-accent">
+                            <Icon className="h-[18px] w-[18px] shrink-0" />
+                            {label}
                         </a>
                     ))}
-                    <a href={`mailto:${CONTACT_EMAIL}`} aria-label={dict.home.email} className="-m-2.5 p-2.5 text-muted transition-colors duration-150 hover:text-accent">
-                        <Mail className="h-5 w-5" />
+                    <a href={`mailto:${CONTACT_EMAIL}`} aria-label="Email"
+                        className="inline-flex items-center gap-2 font-sans text-sm font-medium leading-none text-muted transition-colors duration-150 hover:text-accent">
+                        <Mail className="h-[18px] w-[18px] shrink-0" />
+                        Email
                     </a>
                 </nav>
-                <p className="flex gap-1.5 font-mono text-xs text-subtle">
+                <p className="flex gap-1.5 font-mono text-xs font-medium leading-[1.2] text-subtle">
                     <bdi dir="ltr">© {new Date().getFullYear()}</bdi>
                     <span>{dict.home.footer}</span>
                 </p>
