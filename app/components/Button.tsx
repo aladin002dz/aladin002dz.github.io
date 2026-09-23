@@ -5,57 +5,35 @@ interface ButtonProps {
     children: ReactNode;
     href?: string;
     onClick?: () => void;
-    variant?: "primary" | "secondary" | "outline" | "ghost";
+    variant?: "primary" | "secondary" | "ghost" | "video";
+    size?: "sm" | "md" | "lg";
     className?: string;
     target?: string;
     rel?: string;
 }
 
-const Button = ({
-    children,
-    href,
-    onClick,
-    variant = "primary",
-    className = "",
-    target,
-    rel
-}: ButtonProps) => {
-    const baseStyles = "inline-flex items-center justify-center gap-2 px-6 py-2 rounded-full font-medium transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0";
+const base = "inline-flex items-center justify-center font-medium whitespace-nowrap rounded-btn border transition-[background-color,border-color,transform] duration-150 ease-out active:translate-y-px";
 
-    const variants = {
-        primary: "bg-gradient-to-r from-blue-400 to-orange-400 text-white shadow-lg hover:shadow-xl",
-        secondary: "bg-white/10 backdrop-blur-md border border-white/20 text-gray-800 hover:bg-white/20",
-        outline: "border-2 border-blue-500 text-blue-600 hover:bg-blue-50",
-        ghost: "text-gray-600 hover:text-blue-600 bg-transparent hover:bg-black/5"
-    };
-
-    const combinedClassName = `${baseStyles} ${variants[variant]} ${className}`;
-
-    if (href) {
-        if (href.startsWith("http")) {
-            return (
-                <a
-                    href={href}
-                    className={combinedClassName}
-                    target={target}
-                    rel={rel}
-                >
-                    {children}
-                </a>
-            );
-        }
-        return (
-            <Link href={href} className={combinedClassName}>
-                {children}
-            </Link>
-        );
-    }
-
-    return (
-        <button onClick={onClick} className={combinedClassName}>
-            {children}
-        </button>
-    );
+const sizes = {
+    sm: "h-8 px-3 gap-1.5 text-sm",
+    md: "h-[42px] px-[18px] gap-2 text-base",
+    lg: "h-[52px] px-6 gap-2.5 text-[17px]",
 };
 
-export default Button;
+const variants = {
+    primary: "bg-accent hover:bg-accent-hover text-on-accent border-transparent",
+    secondary: "bg-transparent hover:bg-sunken text-ink border-line-strong",
+    ghost: "bg-transparent hover:bg-sunken text-ink border-transparent",
+    video: "bg-clay hover:opacity-90 text-on-accent border-transparent",
+};
+
+export default function Button({ children, href, onClick, variant = "primary", size = "md", className = "", target, rel }: ButtonProps) {
+    const cls = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
+    if (href) {
+        if (href.startsWith("http") || href.startsWith("mailto:")) {
+            return <a href={href} className={cls} target={target} rel={rel}>{children}</a>;
+        }
+        return <Link href={href} className={cls}>{children}</Link>;
+    }
+    return <button onClick={onClick} className={cls}>{children}</button>;
+}
