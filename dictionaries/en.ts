@@ -50,11 +50,18 @@ export const en = {
             speaker: "Speaker",
             coach: "Coach"
         },
+        lightbox: {
+            close: "Close",
+            prev: "Previous photo",
+            next: "Next photo"
+        },
         events: {
             e777: {
                 description: "Spoke at 7.77, 2026.",
                 alts: [
-                    "Presenting on stage at 7.77, 2026, next to a projected slide."
+                    "Presenting on stage at 7.77, 2026, next to a projected slide.",
+                    "Talking through a cybersecurity slide next to the screen at 7.77, 2026.",
+                    "Selfie in front of the Mobilis Skills Center wall at 7.77, 2026."
                 ]
             },
             chlef: {
