@@ -51,12 +51,16 @@ export default async function HomeContent({ lang }: { lang: string }) {
     ];
 
     const sp = dict.speaking;
-    const photo = (slug: string, n: number, width: number, height: number, alt: string) =>
-        ({ src: `/speaking/${slug}/${n}.webp`, width, height, alt });
+    const photo = (slug: string, n: number, width: number, height: number, alt: string, ext = "webp") =>
+        ({ src: `/speaking/${slug}/${n}.${ext}`, width, height, alt });
     const talks = [
         {
             slug: "777-2026", event: "7.77", year: 2026, role: sp.roles.speaker, description: sp.events.e777.description,
-            photos: [photo("777-2026", 1, 1600, 1036, sp.events.e777.alts[0])],
+            photos: [
+                photo("777-2026", 1, 1600, 1036, sp.events.e777.alts[0]),
+                photo("777-2026", 2, 2048, 921, sp.events.e777.alts[1], "jpg"),
+                photo("777-2026", 3, 1225, 919, sp.events.e777.alts[2], "jpg"),
+            ],
         },
         {
             slug: "chlef-science-day-2025", event: "University of Chlef — Science Day", year: 2025, role: sp.roles.speaker, description: sp.events.chlef.description,
@@ -176,7 +180,7 @@ export default async function HomeContent({ lang }: { lang: string }) {
                     </p>
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                         {talks.map(({ slug, ...talk }) => (
-                            <TalkCard key={slug} {...talk} />
+                            <TalkCard key={slug} {...talk} lightboxLabels={sp.lightbox} />
                         ))}
                     </div>
                 </section>

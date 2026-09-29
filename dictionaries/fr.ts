@@ -50,11 +50,18 @@ export const fr = {
             speaker: "Intervenant",
             coach: "Coach"
         },
+        lightbox: {
+            close: "Fermer",
+            prev: "Photo précédente",
+            next: "Photo suivante"
+        },
         events: {
             e777: {
                 description: "Intervention à 7.77, 2026.",
                 alts: [
-                    "Présentation sur scène à 7.77, 2026, à côté d'une diapositive projetée."
+                    "Présentation sur scène à 7.77, 2026, à côté d'une diapositive projetée.",
+                    "Commentaire d'une diapositive sur la cybersécurité, à côté de l'écran, à 7.77, 2026.",
+                    "Selfie devant le mur du Mobilis Skills Center à 7.77, 2026."
                 ]
             },
             chlef: {

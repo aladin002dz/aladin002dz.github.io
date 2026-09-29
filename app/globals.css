@@ -72,6 +72,10 @@ body { min-height: 100vh; background: var(--bg); color: var(--text); line-height
 ::selection { background: var(--accent-soft); color: var(--text); }
 :focus-visible { outline: none; box-shadow: 0 0 0 3px var(--ring); border-radius: 3px; }
 
+.lightbox[open] { animation: lightbox-in 180ms ease-out; }
+@keyframes lightbox-in { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .lightbox[open] { animation: none; } }
+
 .hairline-grid {
   background:
     linear-gradient(var(--line-subtle) 1px, transparent 1px) 0 0 / 32px 32px,
