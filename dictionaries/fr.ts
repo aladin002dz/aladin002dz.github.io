@@ -42,5 +42,49 @@ export const fr = {
                 npm: "NPM"
             }
         }
+    },
+    speaking: {
+        title: "Conférences & communauté",
+        intro: "Quelques-unes des **conférences**, **ateliers** et **événements communautaires** où j'ai partagé, échangé et appris.",
+        roles: {
+            speaker: "Intervenant",
+            coach: "Coach"
+        },
+        events: {
+            e777: {
+                description: "Intervention à 7.77, 2026.",
+                alts: [
+                    "Présentation sur scène à 7.77, 2026, à côté d'une diapositive projetée."
+                ]
+            },
+            chlef: {
+                description: "Intervention à la Journée de la science, Université de Chlef, 2025.",
+                alts: [
+                    "Présentation devant des étudiants à la Journée de la science, Université de Chlef, 2025.",
+                    "Vue d'ensemble de l'amphithéâtre pendant la conférence, Université de Chlef, 2025.",
+                    "Explication d'un point au public à la Journée de la science, Université de Chlef, 2025."
+                ]
+            },
+            algeria: {
+                description: "Intervention à Algeria 2.0, 2024.",
+                alts: [
+                    "Photo de groupe des organisateurs, intervenants et participants à Algeria 2.0, 2024."
+                ]
+            },
+            fb: {
+                description: "Coaching à la Community Challenge Day, Facebook Developer Circles Algiers, 2019.",
+                alts: [
+                    "Séance de coaching à une table devant un écran de projection, Community Challenge Day, Alger, 2019.",
+                    "Vue d'ensemble de la salle pendant la séance de coaching, Community Challenge Day, Alger, 2019."
+                ]
+            },
+            gdg: {
+                description: "Intervention au GDG I/O Extended, 2017.",
+                alts: [
+                    "Présentation sur scène devant une diapositive de code projetée, GDG I/O Extended, 2017.",
+                    "Présentation sur scène devant une diapositive projetée, GDG I/O Extended, 2017."
+                ]
+            }
+        }
     }
 };

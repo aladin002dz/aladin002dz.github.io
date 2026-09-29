@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Mail, ArrowUpRight } from "lucide-react";
 import { Github, Linkedin, Facebook, Twitter, Bluesky, Youtube } from "./Icons";
 import ProjectCard from "./ProjectCard";
+import TalkCard from "./TalkCard";
 import Button from "./Button";
 import SectionLabel from "./SectionLabel";
 import ThemeToggle from "./ThemeToggle";
@@ -45,6 +46,42 @@ export default async function HomeContent({ lang }: { lang: string }) {
             links: [
                 { label: dict.projects.reactlib.buttons.github, url: "https://github.com/aladin002dz/react-library-2025" },
                 { label: dict.projects.reactlib.buttons.npm, url: "https://www.npmjs.com/package/aladin-ts-rc" },
+            ],
+        },
+    ];
+
+    const sp = dict.speaking;
+    const photo = (slug: string, n: number, width: number, height: number, alt: string) =>
+        ({ src: `/speaking/${slug}/${n}.webp`, width, height, alt });
+    const talks = [
+        {
+            slug: "777-2026", event: "7.77", year: 2026, role: sp.roles.speaker, description: sp.events.e777.description,
+            photos: [photo("777-2026", 1, 1600, 1036, sp.events.e777.alts[0])],
+        },
+        {
+            slug: "chlef-science-day-2025", event: "University of Chlef — Science Day", year: 2025, role: sp.roles.speaker, description: sp.events.chlef.description,
+            photos: [
+                photo("chlef-science-day-2025", 1, 1600, 1066, sp.events.chlef.alts[0]),
+                photo("chlef-science-day-2025", 2, 1600, 1066, sp.events.chlef.alts[1]),
+                photo("chlef-science-day-2025", 3, 1600, 1066, sp.events.chlef.alts[2]),
+            ],
+        },
+        {
+            slug: "algeria-2-0-2024", event: "Algeria 2.0", year: 2024, role: sp.roles.speaker, description: sp.events.algeria.description,
+            photos: [photo("algeria-2-0-2024", 1, 1600, 1066, sp.events.algeria.alts[0])],
+        },
+        {
+            slug: "fb-dev-circles-algiers-2019", event: "Facebook Developer Circles Algiers — Community Challenge Day", year: 2019, role: sp.roles.coach, description: sp.events.fb.description,
+            photos: [
+                photo("fb-dev-circles-algiers-2019", 1, 960, 720, sp.events.fb.alts[0]),
+                photo("fb-dev-circles-algiers-2019", 2, 960, 720, sp.events.fb.alts[1]),
+            ],
+        },
+        {
+            slug: "gdg-io-extended-2017", event: "GDG I/O Extended", year: 2017, role: sp.roles.speaker, description: sp.events.gdg.description,
+            photos: [
+                photo("gdg-io-extended-2017", 1, 1600, 1200, sp.events.gdg.alts[0]),
+                photo("gdg-io-extended-2017", 2, 1600, 1200, sp.events.gdg.alts[1]),
             ],
         },
     ];
@@ -127,6 +164,20 @@ export default async function HomeContent({ lang }: { lang: string }) {
                                 </a>
                             ))}
                         </div>
+                    </div>
+                </section>
+                <section id="speaking" className="mx-auto flex max-w-[1120px] flex-col gap-6 px-6 py-16 md:py-22">
+                    <SectionLabel index="03">{sp.title}</SectionLabel>
+                    <p className="max-w-[60ch] text-[clamp(18px,2vw,22px)] leading-snug text-muted text-pretty">
+                        {/* `**word**` in the dictionary marks the emphasised parts. */}
+                        {sp.intro.split(/\*\*(.+?)\*\*/).map((part: string, i: number) =>
+                            i % 2 ? <strong key={i} className="font-semibold text-ink">{part}</strong> : part
+                        )}
+                    </p>
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                        {talks.map(({ slug, ...talk }) => (
+                            <TalkCard key={slug} {...talk} />
+                        ))}
                     </div>
                 </section>
             </main>
