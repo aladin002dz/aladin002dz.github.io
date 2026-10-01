@@ -10,8 +10,8 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { getDictionary } from "../../lib/dictionary";
 import { CONTACT_EMAIL } from "../../lib/site";
 
-const YT_FR = "https://www.youtube.com/@mahfoudh_arous";
-const YT_AR = "https://www.youtube.com/@%D9%88%D8%B1%D8%B4%D8%A9_%D8%A7%D9%84%D8%A8%D8%B1%D9%85%D8%AC%D8%A9_%D9%85%D8%B9_%D9%85%D8%AD%D9%81%D9%88%D8%B8";
+const YT_FR = "https://www.youtube.com/@mahfoudh-tech-fr";
+const YT_AR = "https://www.youtube.com/@mahfoudh-tech-ar";
 
 export default async function HomeContent({ lang }: { lang: string }) {
     const dict = await getDictionary(lang);
@@ -167,6 +167,14 @@ export default async function HomeContent({ lang }: { lang: string }) {
                                     <ArrowUpRight className="h-4 w-4 text-clay rtl:-scale-x-100" />
                                 </a>
                             ))}
+                            <div aria-disabled="true"
+                                className="flex items-center gap-3.5 rounded-panel border border-dashed border-line bg-surface px-5 py-4 text-muted">
+                                <span className="grid h-10 w-10 place-items-center rounded-btn bg-clay-soft font-mono text-[13px] font-semibold text-clay">EN</span>
+                                <span className="flex flex-1 flex-col">
+                                    <span className="font-medium text-ink">{dict.home.enChannel}</span>
+                                    <span className="text-sm">{dict.home.comingSoon}</span>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </section>

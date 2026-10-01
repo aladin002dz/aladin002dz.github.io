@@ -9,6 +9,8 @@ export const en = {
         teach: "I teach programming on YouTube, in French and Arabic.",
         frChannel: "French channel",
         arChannel: "Arabic channel",
+        enChannel: "English channel",
+        comingSoon: "Coming soon...",
         footer: "Mahfoudh Arous. All rights reserved.",
         nav: {
             home: "Home",
