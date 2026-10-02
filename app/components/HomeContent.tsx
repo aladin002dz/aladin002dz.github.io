@@ -12,6 +12,7 @@ import { CONTACT_EMAIL } from "../../lib/site";
 
 const YT_FR = "https://www.youtube.com/@mahfoudh-tech-fr";
 const YT_AR = "https://www.youtube.com/@mahfoudh-tech-ar";
+const YT_EN = "https://www.youtube.com/@mahfoudh-tech-en";
 
 export default async function HomeContent({ lang }: { lang: string }) {
     const dict = await getDictionary(lang);
@@ -95,6 +96,7 @@ export default async function HomeContent({ lang }: { lang: string }) {
         { label: "LinkedIn", href: "https://www.linkedin.com/in/mahfoudh-arous/", Icon: Linkedin },
         { label: "YouTube FR", href: YT_FR, Icon: Youtube },
         { label: "YouTube AR", href: YT_AR, Icon: Youtube },
+        { label: "YouTube EN", href: YT_EN, Icon: Youtube },
         { label: "Facebook", href: "https://www.facebook.com/mahfoudh.arous", Icon: Facebook },
         { label: "X", href: "https://x.com/mahfoudh_arous", Icon: Twitter },
         { label: "Bluesky", href: "https://bsky.app/profile/mahfoudharous.bsky.social", Icon: Bluesky },
@@ -159,6 +161,7 @@ export default async function HomeContent({ lang }: { lang: string }) {
                             {[
                                 { code: "FR", label: dict.home.frChannel, href: YT_FR },
                                 { code: "AR", label: dict.home.arChannel, href: YT_AR },
+                                { code: "EN", label: dict.home.enChannel, href: YT_EN },
                             ].map((c) => (
                                 <a key={c.code} href={c.href} target="_blank" rel="noopener noreferrer"
                                     className="flex items-center gap-3.5 rounded-panel border border-line bg-surface px-5 py-4 text-ink transition-colors duration-150 hover:border-clay">
@@ -167,14 +170,6 @@ export default async function HomeContent({ lang }: { lang: string }) {
                                     <ArrowUpRight className="h-4 w-4 text-clay rtl:-scale-x-100" />
                                 </a>
                             ))}
-                            <div aria-disabled="true"
-                                className="flex items-center gap-3.5 rounded-panel border border-dashed border-line bg-surface px-5 py-4 text-muted">
-                                <span className="grid h-10 w-10 place-items-center rounded-btn bg-clay-soft font-mono text-[13px] font-semibold text-clay">EN</span>
-                                <span className="flex flex-1 flex-col">
-                                    <span className="font-medium text-ink">{dict.home.enChannel}</span>
-                                    <span className="text-sm">{dict.home.comingSoon}</span>
-                                </span>
-                            </div>
                         </div>
                     </div>
                 </section>

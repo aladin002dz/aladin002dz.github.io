@@ -10,7 +10,6 @@ export const fr = {
         frChannel: "Chaîne en français",
         arChannel: "Chaîne en arabe",
         enChannel: "Chaîne en anglais",
-        comingSoon: "Bientôt disponible...",
         footer: "Mahfoudh Arous. Tous droits réservés.",
         nav: {
             home: "Accueil",

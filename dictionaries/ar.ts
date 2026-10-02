@@ -10,7 +10,6 @@ export const ar = {
         frChannel: "القناة الفرنسية",
         arChannel: "القناة العربية",
         enChannel: "القناة الإنجليزية",
-        comingSoon: "قريبًا...",
         footer: "محفوظ عروس. جميع الحقوق محفوظة.",
         nav: {
             home: "الرئيسية",
