@@ -6,7 +6,7 @@ export const en = {
         connect: "Connect on LinkedIn",
         email: "Email me",
         projects: "Projects",
-        teach: "I teach programming on YouTube, in French, Arabic and English.",
+        teach: "I make videos on AI, software development and tech, in French, Arabic and English.",
         frChannel: "French channel",
         arChannel: "Arabic channel",
         enChannel: "English channel",
