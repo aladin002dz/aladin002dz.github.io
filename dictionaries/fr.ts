@@ -6,9 +6,10 @@ export const fr = {
         connect: "Me contacter sur LinkedIn",
         email: "M'écrire",
         projects: "Projets",
-        teach: "J’enseigne la programmation sur YouTube, en français et en arabe.",
+        teach: "Je fais des vidéos sur l’IA, le développement logiciel et la tech, en français, en arabe et en anglais.",
         frChannel: "Chaîne en français",
         arChannel: "Chaîne en arabe",
+        enChannel: "Chaîne en anglais",
         footer: "Mahfoudh Arous. Tous droits réservés.",
         nav: {
             home: "Accueil",

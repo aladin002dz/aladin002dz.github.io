@@ -10,8 +10,9 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { getDictionary } from "../../lib/dictionary";
 import { CONTACT_EMAIL } from "../../lib/site";
 
-const YT_FR = "https://www.youtube.com/@mahfoudh_arous";
-const YT_AR = "https://www.youtube.com/@%D9%88%D8%B1%D8%B4%D8%A9_%D8%A7%D9%84%D8%A8%D8%B1%D9%85%D8%AC%D8%A9_%D9%85%D8%B9_%D9%85%D8%AD%D9%81%D9%88%D8%B8";
+const YT_FR = "https://www.youtube.com/@mahfoudh-tech-fr";
+const YT_AR = "https://www.youtube.com/@mahfoudh-tech-ar";
+const YT_EN = "https://www.youtube.com/@mahfoudh-tech-en";
 
 export default async function HomeContent({ lang }: { lang: string }) {
     const dict = await getDictionary(lang);
@@ -95,6 +96,7 @@ export default async function HomeContent({ lang }: { lang: string }) {
         { label: "LinkedIn", href: "https://www.linkedin.com/in/mahfoudh-arous/", Icon: Linkedin },
         { label: "YouTube FR", href: YT_FR, Icon: Youtube },
         { label: "YouTube AR", href: YT_AR, Icon: Youtube },
+        { label: "YouTube EN", href: YT_EN, Icon: Youtube },
         { label: "Facebook", href: "https://www.facebook.com/mahfoudh.arous", Icon: Facebook },
         { label: "X", href: "https://x.com/mahfoudh_arous", Icon: Twitter },
         { label: "Bluesky", href: "https://bsky.app/profile/mahfoudharous.bsky.social", Icon: Bluesky },
@@ -159,6 +161,7 @@ export default async function HomeContent({ lang }: { lang: string }) {
                             {[
                                 { code: "FR", label: dict.home.frChannel, href: YT_FR },
                                 { code: "AR", label: dict.home.arChannel, href: YT_AR },
+                                { code: "EN", label: dict.home.enChannel, href: YT_EN },
                             ].map((c) => (
                                 <a key={c.code} href={c.href} target="_blank" rel="noopener noreferrer"
                                     className="flex items-center gap-3.5 rounded-panel border border-line bg-surface px-5 py-4 text-ink transition-colors duration-150 hover:border-clay">
