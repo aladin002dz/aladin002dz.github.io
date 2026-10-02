@@ -23,11 +23,18 @@ pnpm lint
 | `app/(locales)/[lang]/` | `/en`, `/fr`, `/ar` |
 | `app/components/HomeContent.tsx` | The page itself, shared by both routes |
 | `dictionaries/` | UI copy per locale (`en`, `fr`, `ar`) |
+| `public/me.webp` | Hero photo (shown in a 4:5 frame with `object-cover`) |
 | `lib/site.ts` | Canonical site URL, contact address, locale list |
 | `app/robots.ts`, `app/sitemap.ts` | Generated `robots.txt` and `sitemap.xml` |
 | `app/icon.png` | Favicon (32×32) |
 | `public/CNAME` | Custom domain for GitHub Pages |
 | `public/og.png` | Social preview image (1200×630) |
+
+## Content notes
+
+- The YouTube section links to three channels (`@mahfoudh-tech-fr`, `-ar`, `-en`).
+  The URLs are the `YT_FR`, `YT_AR` and `YT_EN` constants at the top of
+  `app/components/HomeContent.tsx`; the channel labels live in `dictionaries/`.
 
 ## URL and SEO conventions
 
