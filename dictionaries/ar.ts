@@ -6,7 +6,7 @@ export const ar = {
         connect: "تواصل معي على LinkedIn",
         email: "راسلني",
         projects: "المشاريع",
-        teach: "أعلّم البرمجة على YouTube بالفرنسية والعربية.",
+        teach: "أعلّم البرمجة على YouTube بالفرنسية والعربية والإنجليزية.",
         frChannel: "القناة الفرنسية",
         arChannel: "القناة العربية",
         enChannel: "القناة الإنجليزية",
