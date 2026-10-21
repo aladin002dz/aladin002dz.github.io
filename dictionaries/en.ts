@@ -94,5 +94,11 @@ export const en = {
                 ]
             }
         }
+    },
+    guestbook: {
+        title: "Guestbook",
+        prompt: "What should I build, teach, or write about next?",
+        intro: "Suggestions, feedback or just a hello: I read every message.",
+        cta: "Leave a message",
     }
 };

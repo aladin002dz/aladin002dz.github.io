@@ -94,5 +94,11 @@ export const fr = {
                 ]
             }
         }
+    },
+    guestbook: {
+        title: "Livre d'or",
+        prompt: "Que devrais-je construire, enseigner ou écrire ensuite ?",
+        intro: "Suggestions, avis ou simple bonjour : je lis chaque message.",
+        cta: "Laisser un message",
     }
 };

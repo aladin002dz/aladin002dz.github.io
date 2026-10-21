@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Mail, ArrowUpRight } from "lucide-react";
+import { Mail, ArrowUpRight, MessageSquare } from "lucide-react";
 import { Github, Linkedin, Facebook, Twitter, Bluesky, Youtube } from "./Icons";
 import ProjectCard from "./ProjectCard";
 import TalkCard from "./TalkCard";
@@ -185,6 +185,19 @@ export default async function HomeContent({ lang }: { lang: string }) {
                         {talks.map(({ slug, ...talk }) => (
                             <TalkCard key={slug} {...talk} lightboxLabels={sp.lightbox} />
                         ))}
+                    </div>
+                </section>
+                <section id="guestbook" className="border-t border-line bg-sunken">
+                    <div className="mx-auto flex max-w-[1120px] flex-col items-start gap-5 px-6 py-14 md:flex-row md:items-center md:justify-between md:py-18">
+                        <div className="flex flex-col gap-4">
+                            <SectionLabel index="04">{dict.guestbook.title}</SectionLabel>
+                            <p className="max-w-[28ch] text-[clamp(22px,2.6vw,28px)] font-semibold leading-tight text-pretty">{dict.guestbook.prompt}</p>
+                            <p className="text-muted">{dict.guestbook.intro}</p>
+                        </div>
+                        <Button href="https://app.mahfoudh.dev/guestbook" size="lg">
+                            <MessageSquare className="h-[18px] w-[18px]" />
+                            <span>{dict.guestbook.cta}</span>
+                        </Button>
                     </div>
                 </section>
             </main>
