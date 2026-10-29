@@ -8,7 +8,7 @@ export const dynamic = "force-static";
  * `new Date()` would re-stamp every URL on every deploy, which teaches
  * crawlers to ignore the field.
  */
-const LAST_MODIFIED = new Date("2026-09-09T00:00:00.000Z");
+const LAST_MODIFIED = new Date("2026-10-29T00:00:00.000Z");
 
 const languages = {
     en: LANGUAGE_ALTERNATES.en,
