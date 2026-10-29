@@ -143,19 +143,10 @@ export default async function HomeContent({ lang }: { lang: string }) {
                     </div>
                 </HeroSurface>
 
-                <section id="projects" className="motion-reveal mx-auto flex max-w-[1120px] flex-col gap-6 px-6 py-16 md:py-22">
-                    <SectionLabel index="01">{dict.home.projects}</SectionLabel>
-                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                        {projects.map((project) => (
-                            <ProjectCard key={project.title} {...project} />
-                        ))}
-                    </div>
-                </section>
-
                 <section id="youtube" className="motion-reveal border-y border-line bg-sunken">
                     <div className="mx-auto grid max-w-[1120px] items-center gap-6 px-6 py-14 md:grid-cols-2 md:py-18">
                         <div className="flex flex-col gap-4">
-                            <SectionLabel index="02" tone="clay">YouTube</SectionLabel>
+                            <SectionLabel index="01" tone="clay">YouTube</SectionLabel>
                             <p className="text-[clamp(22px,2.6vw,28px)] font-semibold leading-tight text-pretty">{dict.home.teach}</p>
                         </div>
                         <div className="grid gap-4 sm:grid-cols-2">
@@ -175,7 +166,7 @@ export default async function HomeContent({ lang }: { lang: string }) {
                     </div>
                 </section>
                 <section id="speaking" className="mx-auto flex max-w-[1120px] flex-col gap-6 px-6 py-16 md:py-22">
-                    <SectionLabel index="03">{sp.title}</SectionLabel>
+                    <SectionLabel index="02">{sp.title}</SectionLabel>
                     <p className="max-w-[60ch] text-[clamp(18px,2vw,22px)] leading-snug text-muted text-pretty">
                         {/* `**word**` in the dictionary marks the emphasised parts. */}
                         {sp.intro.split(/\*\*(.+?)\*\*/).map((part: string, i: number) =>
@@ -188,6 +179,15 @@ export default async function HomeContent({ lang }: { lang: string }) {
                         ))}
                     </div>
                 </section>
+                <section id="projects" className="motion-reveal mx-auto flex max-w-[1120px] flex-col gap-6 px-6 py-16 md:py-22">
+                    <SectionLabel index="03">{dict.home.projects}</SectionLabel>
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                        {projects.map((project) => (
+                            <ProjectCard key={project.title} {...project} />
+                        ))}
+                    </div>
+                </section>
+
                 <section id="guestbook" className="border-t border-line bg-sunken">
                     <div className="mx-auto flex max-w-[1120px] flex-col items-start gap-5 px-6 py-14 md:flex-row md:items-center md:justify-between md:py-18">
                         <div className="flex flex-col gap-4">
