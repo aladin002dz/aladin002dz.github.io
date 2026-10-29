@@ -6,8 +6,7 @@ import ProjectCard from "./ProjectCard";
 import TalkCard from "./TalkCard";
 import Button from "./Button";
 import SectionLabel from "./SectionLabel";
-import ThemeToggle from "./ThemeToggle";
-import LanguageSwitcher from "./LanguageSwitcher";
+import SiteHeader from "./SiteHeader";
 import { getDictionary } from "../../lib/dictionary";
 import { CONTACT_EMAIL } from "../../lib/site";
 
@@ -105,17 +104,7 @@ export default async function HomeContent({ lang }: { lang: string }) {
 
     return (
         <div className={`min-h-screen bg-bg text-ink ${isArabic ? "font-arabic" : "font-sans"}`}>
-            <header className="sticky top-0 z-50 border-b border-line bg-bg/85 backdrop-blur-md">
-                <div className="mx-auto flex max-w-[1120px] items-center gap-4 px-6 py-3.5">
-                    <a href={isArabic ? "/ar" : lang === "fr" ? "/fr" : "/"} dir="ltr" className="font-sans text-[22px] font-semibold leading-none tracking-[-0.03em] text-ink">
-                        Mahfoudh<span className="text-accent">.</span>
-                    </a>
-                    <div className="ms-auto flex items-center gap-2.5">
-                        <LanguageSwitcher currentLang={lang} />
-                        <ThemeToggle />
-                    </div>
-                </div>
-            </header>
+            <SiteHeader lang={lang} home />
 
             <main>
                 <HeroSurface lang={lang}>
